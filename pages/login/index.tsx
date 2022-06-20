@@ -1,6 +1,6 @@
-import Head from "next/head";
-import { Fragment } from "react";
-import Login from "../../components/login/Login";
+import Head from 'next/head';
+import { Fragment } from 'react';
+import Login from '../../components/login/Login';
 
 const LoginPage = () => {
   return (

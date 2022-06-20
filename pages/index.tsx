@@ -1,8 +1,7 @@
-import type { NextPage } from "next";
-import { Fragment } from "react";
+import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  return <div>Admin Project</div>;
+  return <div>Home Page</div>;
 };
 
 export default Home;
