@@ -2,7 +2,7 @@ import React from 'react';
 
 const Login = () => {
     return (
-        <div className="w-50 start-50 position-relative bg-danger">
+        <div className="w-50 start-50 position-relavtive bg-danger">
             <form className="w-25 start-50 position-absolute translate-middle-x mt-3 p-5 bg-light">
                 <div className="form-outline mb-4">
                     <label className="form-label">Email address</label>
