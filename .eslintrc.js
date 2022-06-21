@@ -18,5 +18,8 @@ module.exports = {
         sourceType: 'module',
     },
     plugins: ['react', '@typescript-eslint'],
-    rules: {},
+    rules: {
+        'no-empty-function': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
+    },
 };
