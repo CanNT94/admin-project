@@ -5,6 +5,18 @@
             "password": "$2a$10$5fHur1UWGgB8rh1q/Vmm4u7bYnE12gAHYDtcaV2FvvnqBgR9FJuXe",
             "userName": "cannt",
             "id": 1
+        },
+        {
+            "email": "cannt@smartosc.com",
+            "password": "$2a$10$JTFCyKer3rVXiyExZWXZQOiBSfWldzd5a3FZJpaJlspuqKOcvFiEC",
+            "userName": "nguyenthiencan",
+            "id": 2
+        },
+        {
+            "email": "admin@gmail.com",
+            "password": "$2a$10$Gnubce5HrNdYsyozp34Rr.QvE1S5d7po9mLbjH1vUSvCAtXEY.j62",
+            "userName": "admin",
+            "id": 3
         }
     ]
 }

@@ -2,8 +2,8 @@ import React, { createContext, ReactNode, useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 import { User } from '../model/user';
 
-const TOKEN_KEY = 'auth-token-customer';
-const USER_KEY = 'auth-customer';
+const TOKEN_KEY = 'auth-user-token';
+const USER_KEY = 'auth-user';
 
 type Props = {
     children: ReactNode;
@@ -29,26 +29,23 @@ const authContextDefaultValues: authContextType = {
 
 const AuthContext = createContext<authContextType>(authContextDefaultValues);
 
-const getToken = (): string | null => {
-    if (localStorage.getItem(TOKEN_KEY)) {
-        const token = localStorage.getItem(TOKEN_KEY);
-        window.sessionStorage.setItem(TOKEN_KEY, token ? token : '');
+const getToken = () => {
+    if (typeof window !== 'undefined') {
+        return localStorage.getItem(TOKEN_KEY);
+    } else {
+        return null;
     }
-    return window.sessionStorage.getItem(TOKEN_KEY)
-        ? window.sessionStorage.getItem(TOKEN_KEY)
-        : null;
 };
 
-const getUser = (): User | null => {
-    if (localStorage.getItem(USER_KEY)) {
+const getUser = () => {
+    if (typeof window !== 'undefined') {
         const user = localStorage.getItem(USER_KEY);
-        window.sessionStorage.setItem(USER_KEY, user ? user : '');
+        if (user) {
+            return JSON.parse(user);
+        }
+    } else {
+        return null;
     }
-    const user = window.sessionStorage.getItem(USER_KEY);
-    if (user) {
-        return JSON.parse(user);
-    }
-    return null;
 };
 
 export const AuthContextProvider = ({ children }: Props) => {
@@ -61,7 +58,7 @@ export const AuthContextProvider = ({ children }: Props) => {
         return getUser();
     });
 
-    const userIsLoggedIn = !!token;
+    const isLoggedIn = !!token;
 
     const logoutHandler = useCallback(() => {
         setToken(null);
@@ -76,22 +73,18 @@ export const AuthContextProvider = ({ children }: Props) => {
         setToken(token);
         localStorage.removeItem(TOKEN_KEY);
         localStorage.setItem(TOKEN_KEY, token);
-        window.sessionStorage.removeItem(TOKEN_KEY);
-        window.sessionStorage.setItem(TOKEN_KEY, token);
     };
 
     const saveUser = (user: User) => {
         setUser(user);
         localStorage.removeItem(USER_KEY);
         localStorage.setItem(USER_KEY, JSON.stringify(user));
-        window.sessionStorage.removeItem(USER_KEY);
-        window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
     };
 
     const contextValue = {
         token: token,
         user: user,
-        isLoggedIn: userIsLoggedIn,
+        isLoggedIn: isLoggedIn,
         saveToken: saveToken,
         saveUser: saveUser,
         logout: logoutHandler,
