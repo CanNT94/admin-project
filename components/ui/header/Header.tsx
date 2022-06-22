@@ -9,10 +9,10 @@ interface HeaderProps {
 
 const dataMenu = [
     {id: 1, name: 'Account'},
-    {id: 1, name: 'Features'},
-    {id: 1, name: 'History'},
-    {id: 1, name: 'Support'},
-    {id: 1, name: 'Sign out'},
+    {id: 2, name: 'Features'},
+    {id: 3, name: 'History'},
+    {id: 4, name: 'Support'},
+    {id: 5, name: 'Sign out'},
 ]
 
 const userLogin = {
