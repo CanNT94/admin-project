@@ -10,14 +10,7 @@ const Login = () => {
             router.push('/login');
         }
     }, []);
-    return (
-        <>
-            <div className="h1">Home Page</div>
-            <button onClick={authCtx.logout} className="btn btn-primary">
-                Sign out
-            </button>
-        </>
-    );
+    return <div className="flex justify-center h1">Home Page</div>;
 };
 
 export default Login;
