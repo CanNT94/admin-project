@@ -1,0 +1,15 @@
+.navbar .menu-button {
+  color: #8f8f8f;
+  width: 120px;
+  text-align: center;
+}
+.navbar .menu-button .main, .navbar .menu-button .sub {
+  fill: #3a3a3a;
+  transition: fill .3s;
+}
+.navbar .menu-button .main {
+  width: 10px;
+}
+.navbar .menu-button svg {
+  height: 12px;
+}

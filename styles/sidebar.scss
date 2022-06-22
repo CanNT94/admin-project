@@ -1,0 +1,54 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding-top: 100px;
+  z-index: 4;
+  height: calc(100% - 100px);
+  transition: border-radius .3s;
+}
+
+.sidebar .main-menu {
+  width: 120px;
+  height: calc(100% - 100px);
+  background: #fff;
+  z-index: 3;
+  position: fixed;
+  transition: transform .3s;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  left: 0;
+}
+.sidebar .main-menu .scroll {
+  padding-right: unset;
+  margin-right: unset;
+  height: 100%;
+}
+.sidebar .scrollbar-container {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.sidebar .sub-menu {
+  width: 230px;
+  background: #fff;
+  z-index: 2;
+  position: fixed;
+  left: 120px;
+  border-left: 1px solid #f3f3f3;
+  box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
+  transition: transform .3s;
+  height: calc(100% - 100px);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.ps {
+  overflow: hidden!important;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
