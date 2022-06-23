@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const ToggleSwitchTheme = () => {
-    const [isActive, setActive] = useState('true');
+    const [isActive, setActive] = useState<boolean>(true);
 
     const changeTheme = () => {
         setActive(!isActive);
