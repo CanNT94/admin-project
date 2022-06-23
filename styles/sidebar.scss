@@ -52,3 +52,14 @@
   touch-action: auto;
   -ms-touch-action: auto;
 }
+
+.sub-hidden .sub-menu {
+  transform: translateX(-230px);
+}
+.main-hidden .main-menu {
+  transform: translateX(-120px);
+}
+.main-hidden.sub-hidden .sub-menu, .menu-hidden .sub-menu {
+  transform: translateX(-350px);
+}
+

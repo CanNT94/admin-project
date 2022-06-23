@@ -1,28 +1,32 @@
-import React from 'react';
-interface MenuButtonProps {
-    onClick?: () => void;
-}
+import React, { useState } from 'react';
+import { MenuStateEnum } from '../../../enum/enum';
+import { useAppDispatch } from '../../../store/hooks';
+import { setMenuState } from '../../../store/menuSlice';
+
 const MenuButton = () => {
+    const dispatch = useAppDispatch();
+    const [menu, setMenu] = useState<MenuStateEnum>(MenuStateEnum.MENU);
+    const handleMenu = () => {
+        let state: MenuStateEnum;
+        switch (menu) {
+            case MenuStateEnum.MENU:
+                state = MenuStateEnum.MAIN_MENU;
+                break;
+            case MenuStateEnum.MAIN_MENU:
+                state = MenuStateEnum.HIDE_ALL;
+                break;
+            default:
+                state = MenuStateEnum.MENU;
+        }
+        setMenu(state);
+        dispatch(setMenuState(state));
+    };
     return (
-        <button className="menu-button flex justify-center">
-            <svg
-                className="main"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 9 17"
-            >
-                <rect x="0.48" y="0.5" width="7" height="1"></rect>
-                <rect x="0.48" y="7.5" width="7" height="1"></rect>
-                <rect x="0.48" y="15.5" width="7" height="1"></rect>
-            </svg>
-            <svg
-                className="sub"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 18 17"
-            >
-                <rect x="1.56" y="0.5" width="16" height="1"></rect>
-                <rect x="1.56" y="7.5" width="16" height="1"></rect>
-                <rect x="1.56" y="15.5" width="16" height="1"></rect>
-            </svg>
+        <button
+            className="menu-button flex justify-center"
+            onClick={handleMenu}
+        >
+            <i className="bi bi-list"></i>
         </button>
     );
 };

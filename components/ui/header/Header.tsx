@@ -10,7 +10,12 @@ export const Header = ({ user }: HeaderProps) => (
     <nav className="navbar fixed-top">
         <div className="d-flex align-items-center navbar-left">
             <MenuButton />
-            <Input placeholder="Search" type="text"></Input>
+            <Input
+                className="w-64"
+                placeholder="Search"
+                icon="bi bi-search"
+                type="text"
+            ></Input>
         </div>
         <div className="navbar-logo">
             <span className="logo">Logo</span>

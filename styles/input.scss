@@ -1,11 +1,10 @@
-.search {
+.input {
   position: relative;
-  width: 230px;
-  border-radius: 20px;
+  border-radius: 1.5rem;
   background: #f8f8f8;
 }
 
-.search input {
+.input input {
   border: initial;
   background: transparent;
   outline: initial!important;
@@ -16,7 +15,7 @@
   color: #3a3a3a;
 }
 
-.search .search-icon {
+.input .icon-hover {
   font-size: 17px;
   border-radius: 10px;
   color: #d7d7d7;
