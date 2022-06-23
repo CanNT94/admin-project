@@ -10,14 +10,13 @@ import Input from '../input/input';
 import MenuButton from '../button/MenuButton';
 import logo from '../../../public/assets/images/smartosc_logo.png';
 import AuthContext from '../../../context/auth-context';
-import * as Icon from 'react-bootstrap-icons';
 
 interface HeaderProps {
     user?: User;
 }
 const AvatarUser = dynamic(() => import('../avatarUser/AvatarUser'), {
     ssr: false,
-})
+});
 
 export const Header = ({ user }: HeaderProps) => {
     const authCtx = useContext(AuthContext);
@@ -87,7 +86,7 @@ export const Header = ({ user }: HeaderProps) => {
             </div>
             <div className="navbar-right flex justify-end items-center">
                 <div className="user mr-14 flex justify-end items-center">
-                    <ButtonFullScreen iconBtn={<Icon.ArrowsFullscreen />} />
+                    <ButtonFullScreen icon="bi bi-arrows-fullscreen" />
                     <Dropdown contentData={dataMenu}>
                         <AvatarUser name={authCtx.user?.email} />
                     </Dropdown>
