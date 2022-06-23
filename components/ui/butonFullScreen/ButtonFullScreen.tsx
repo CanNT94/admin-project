@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface IButtonFullProps {
-    iconBtn: string;
+    iconBtn: React.ReactElement;
 }
 
 const ButtonFullScreen = ({ iconBtn }: IButtonFullProps) => {
@@ -20,7 +20,7 @@ const ButtonFullScreen = ({ iconBtn }: IButtonFullProps) => {
 
     return (
         <button
-            className="px-2 py-2 outline-none"
+            className="px-2 py-2 outline-none mx-2"
             onClick={e => handleClick(e)}
         >
             {iconBtn}

@@ -4,7 +4,7 @@ interface IDropDownProps {
     children?: React.ReactNode;
     contentData: {
         id: number;
-        name: string;
+        name: React.ReactElement | string;
     }[];
 }
 
@@ -35,9 +35,9 @@ const Dropdown = ({ children, contentData }: IDropDownProps) => {
     useOutsideClickShowMenu(ref);
 
     return (
-        <div className="relative dropdown-menu-custom w-36">
+        <div className="relative dropdown-menu-custom w-36" ref={ref}>
             <button
-                ref={ref}
+                
                 onClick={(e): void => showMenuDropdown(e)}
             >
                 {children}
@@ -46,7 +46,7 @@ const Dropdown = ({ children, contentData }: IDropDownProps) => {
                 <ul className="px-0 py-2 w-40 z-50 bg-white border border-slate-400 rounded-xl absolute top-14 right-0">
                     {contentData.map(item => (
                         <li
-                            className="px-4 py-2 text-left text-sm hover:bg-gray-200"
+                            className="item-dropdown px-4 py-2 text-left text-sm hover:bg-gray-200"
                             key={item.id}
                         >
                             {item.name}
