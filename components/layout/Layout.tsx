@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Header } from '../ui/header/Header';
 import Sidebar from '../ui/sidebar/Sidebar';
+import Header from '../ui/header/Header';
 
 type Props = {
     children: ReactNode;

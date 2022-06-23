@@ -1,0 +1,31 @@
+.navbar {
+  background: #fff;
+  height: 100px;
+  padding: 1.5rem 0;
+  box-shadow: 0 1px 15px rgb(0 0 0 / 4%), 0 1px 6px rgb(0 0 0 / 4%);
+}
+
+.fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.navbar .navbar-left {
+  flex-basis: 40%;
+}
+
+.navbar .navbar-logo {
+  width: 10rem;
+  height: 6rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.navbar .navbar-right {
+  flex-basis: 40%;
+  text-align: right;
+}

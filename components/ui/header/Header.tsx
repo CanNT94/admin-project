@@ -2,9 +2,14 @@ import React, { useContext } from 'react';
 import { User } from '../../../model/user';
 import { ButtonFullScreen } from '../butonFullScreen';
 import { Dropdown } from '../dropdown';
-import AuthContext from '../../../context/auth-context';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import Input from '../input/input';
+import MenuButton from '../button/MenuButton';
+import logo from '../../../public/assets/images/smartosc_logo.png';
+import AuthContext from '../../../context/auth-context';
 import * as Icon from 'react-bootstrap-icons';
 
 interface HeaderProps {
@@ -16,7 +21,7 @@ const AvatarUser = dynamic(() => import('../avatarUser/AvatarUser'), {
 
 export const Header = ({ user }: HeaderProps) => {
     const authCtx = useContext(AuthContext);
-    
+    const router = useRouter();
     const dataMenu = [
         {
             id: 1,
@@ -65,10 +70,20 @@ export const Header = ({ user }: HeaderProps) => {
     return (
         <nav className="navbar fixed-top">
             <div className="d-flex align-items-center navbar-left">
-                Header left
+                <MenuButton />
+                <Input
+                    className="w-64"
+                    placeholder="Search"
+                    icon="bi bi-search"
+                    type="text"
+                ></Input>
             </div>
-            <div className="navbar-logo">
-                <span className="logo">Logo</span>
+            <div
+                className="navbar-logo"
+                role="button"
+                onClick={() => router.push('/')}
+            >
+                <Image className="logo" src={logo} layout="fill"></Image>
             </div>
             <div className="navbar-right flex justify-end items-center">
                 <div className="user mr-14 flex justify-end items-center">
@@ -81,3 +96,5 @@ export const Header = ({ user }: HeaderProps) => {
         </nav>
     );
 };
+
+export default Header;

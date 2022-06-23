@@ -1,0 +1,33 @@
+.input {
+  position: relative;
+  border-radius: 1.5rem;
+  background: #f8f8f8;
+}
+
+.input input {
+  border: initial;
+  background: transparent;
+  outline: initial!important;
+  padding: 0.5rem 1rem;
+  line-height: 1.75;
+  font-size: .8rem;
+  width: 90%;
+  color: #3a3a3a;
+}
+
+.input .icon-hover {
+  font-size: 17px;
+  border-radius: 10px;
+  color: #d7d7d7;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: -10px;
+  right: 3px;
+  text-align: center;
+  cursor: pointer;
+
+  :hover {
+    color: $primary-color;
+  }
+}
