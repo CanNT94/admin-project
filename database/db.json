@@ -1,28 +1,49 @@
 {
-  "users": [
-    {
-      "email": "nguyenthiencan94@gmail.com",
-      "password": "$2a$10$5fHur1UWGgB8rh1q/Vmm4u7bYnE12gAHYDtcaV2FvvnqBgR9FJuXe",
-      "userName": "cannt",
-      "id": 1
-    },
-    {
-      "email": "cannt@smartosc.com",
-      "password": "$2a$10$JTFCyKer3rVXiyExZWXZQOiBSfWldzd5a3FZJpaJlspuqKOcvFiEC",
-      "userName": "nguyenthiencan",
-      "id": 2
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "$2a$10$Gnubce5HrNdYsyozp34Rr.QvE1S5d7po9mLbjH1vUSvCAtXEY.j62",
-      "userName": "admin",
-      "id": 3
-    },
-    {
-      "email": "test@gmail.com",
-      "password": "$2a$10$KbWPE6St/mbhpTUKHzmR.uF2JRHfNpX6GJLXIaJozpp6p3lvJj2l2",
-      "userName": "test",
-      "id": 4
-    }
-  ]
+    "users": [
+        {
+            "email": "nguyenthiencan94@gmail.com",
+            "password": "$2a$10$5fHur1UWGgB8rh1q/Vmm4u7bYnE12gAHYDtcaV2FvvnqBgR9FJuXe",
+            "userName": "cannt",
+            "id": 1
+        },
+        {
+            "email": "cannt@smartosc.com",
+            "password": "$2a$10$JTFCyKer3rVXiyExZWXZQOiBSfWldzd5a3FZJpaJlspuqKOcvFiEC",
+            "userName": "nguyenthiencan",
+            "id": 2
+        },
+        {
+            "email": "admin@gmail.com",
+            "password": "$2a$10$Gnubce5HrNdYsyozp34Rr.QvE1S5d7po9mLbjH1vUSvCAtXEY.j62",
+            "userName": "admin",
+            "id": 3
+        },
+        {
+            "email": "test@gmail.com",
+            "password": "$2a$10$KbWPE6St/mbhpTUKHzmR.uF2JRHfNpX6GJLXIaJozpp6p3lvJj2l2",
+            "userName": "test",
+            "id": 4
+        }
+    ],
+
+    "notification": [
+        {
+            "id": 1,
+            "img": "https://images.unsplash.com/photo-1560790671-b76ca4de55ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=868&q=80",
+            "title": "This is title 1",
+            "time": "2013"
+        },
+        {
+            "id": 2,
+            "img": "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80",
+            "title": "This is title 2",
+            "time": "2014"
+        },
+        {
+            "id": 3,
+            "img": "https://images.unsplash.com/photo-1495231916356-a86217efff12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
+            "title": "This is title 3",
+            "time": "2015"
+        }
+    ]
 }

@@ -2,17 +2,45 @@ import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/auth-context';
 import { useRouter } from 'next/router';
 import ItemNotification from '../item-notification/ItemNotification';
+import { Notification } from '../../model/notification';
 
 const Login = () => {
     const router = useRouter();
     const authCtx = useContext(AuthContext);
     const [toggle, setToggle] = useState(false);
+    const [datas, setDatas] = useState<Notification[]>([]);
 
     useEffect(() => {
         if (!authCtx.isLoggedIn) {
             router.push('/login');
         }
     }, []);
+
+    useEffect(() => {
+        fetch('http://localhost:8888/notification', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then(res => res.json())
+            .then(data => {
+                setDatas(data);
+            });
+    }, []);
+
+    // let dataList: any[] = [];
+    // fetch('http://localhost:8888/notification', {
+    //     method: 'GET',
+    //     headers: { 'Content-Type': 'application/json' },
+    // })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         dataList.push(data);
+    //         setDatas(dataList[0]);
+    //     });
+    console.log('daattatata', datas);
+    // const test1 = dataList[0];
+    // console.log('hehe', dataList[0]);
+
     return (
         <>
             <div className="h1">Home Page</div>
@@ -35,9 +63,13 @@ const Login = () => {
                     </svg>
                     {toggle ? (
                         <div className="border w-[220px]  rounded-[10px] mt-2 overflow-y-auto h-[240px]">
-                            <ItemNotification></ItemNotification>
-                            <ItemNotification></ItemNotification>
-                            <ItemNotification></ItemNotification>
+                            {datas?.length > 0 &&
+                                datas.map(item => (
+                                    <ItemNotification
+                                        key={item.id}
+                                        infor={item}
+                                    ></ItemNotification>
+                                ))}
                         </div>
                     ) : (
                         ''
