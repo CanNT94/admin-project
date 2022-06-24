@@ -1,3 +1,5 @@
+@import "variables.module.scss";
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -11,7 +13,7 @@
 .sidebar .main-menu {
   width: 120px;
   height: calc(100% - 100px);
-  background: #fff;
+  background: $background-sidebar-color;
   z-index: 3;
   position: fixed;
   transition: transform .3s;
@@ -31,11 +33,11 @@
 
 .sidebar .sub-menu {
   width: 230px;
-  background: #fff;
+  background: $background-sidebar-color;
   z-index: 2;
   position: fixed;
   left: 120px;
-  border-left: 1px solid #f3f3f3;
+  border-left: 1px solid $border-color;
   box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
   transition: transform .3s;
   height: calc(100% - 100px);
@@ -61,5 +63,78 @@
 }
 .main-hidden.sub-hidden .sub-menu, .menu-hidden .sub-menu {
   transform: translateX(-350px);
+}
+
+.sidebar .main-menu ul li {
+  position: relative;
+}
+
+.sidebar .main-menu ul li.active a {
+  color: $primary-color;
+}
+.sidebar .main-menu ul li a {
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  border-bottom: 1px solid #f3f3f3;
+  color: #3a3a3a;
+}
+
+.sidebar ul li a {
+  text-decoration: none !important;
+  color: #3a3a3a;
+  transition: color .2s;
+}
+
+.sidebar .main-menu ul li.active:after {
+  content: " ";
+  background: $primary-color;
+  border-radius: 10px;
+  position: absolute;
+  width: 6px;
+  height: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.sidebar .sub-menu ul li.active:after {
+  content: " ";
+  background: $primary-color;
+  border-radius: 10px;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -16px;
+}
+
+.sidebar .sub-menu ul li.active a, .sidebar .sub-menu ul li.active i {
+  color: $primary-color;
+}
+.sidebar .sub-menu ul li a {
+  font-size: 13px;
+  display: block;
+  padding: 8px 0;
+  margin-bottom: 10px;
+}
+
+.sidebar .nav-sub-menu {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.sidebar .sub-menu ul li {
+  margin-bottom: 0;
+  margin-left: 30px;
+  position: relative;
 }
 

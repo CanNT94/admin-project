@@ -45,5 +45,51 @@
             "title": "This is title 3",
             "time": "2015"
         }
+    ],
+    "menu": [
+        {
+            "id": 1,
+            "iconClassName": "bi bi-shop",
+            "label": "Component",
+            "subMenu": [
+                {
+                    "id": 1,
+                    "iconClassName": "bi bi-archive",
+                    "label": "Input",
+                    "url": "/input"
+                },
+                {
+                    "id": 2,
+                    "iconClassName": "bi bi-list-task",
+                    "label": "Dropdown",
+                    "url": "/dropdown"
+                },
+                {
+                    "id": 3,
+                    "iconClassName": "bi bi-menu-button-wide",
+                    "label": "Button",
+                    "url": "/button"
+                },
+                {
+                    "id": 4,
+                    "iconClassName": "bi bi-credit-card-2-front",
+                    "label": "Card",
+                    "url": "/input"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "iconClassName": "bi bi-archive",
+            "label": "Page",
+            "subMenu": [
+                {
+                    "id": 1,
+                    "iconClassName": "bi bi-credit-card-2-front",
+                    "label": "Card",
+                    "url": "/card"
+                }
+            ]
+        }
     ]
 }
