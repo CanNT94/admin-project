@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { User } from '../../../model/user';
 import { ButtonFullScreen } from '../butonFullScreen';
 import { Dropdown } from '../dropdown';
@@ -13,6 +13,8 @@ import AuthContext from '../../../context/auth-context';
 
 import { ToggleSwitchTheme } from '../ToggleSwitchTheme';
 import { SwitcherLanguage } from '../SwitcherLanguage';
+import { Notification } from '../../../model/notification';
+import ItemNotification from '../item-notification/ItemNotification';
 
 interface HeaderProps {
     user?: User;
@@ -29,8 +31,19 @@ const dataLanguage = [
 const languageActive = { id: 'en', title: 'English' };
 
 export const Header = ({ user }: HeaderProps) => {
+    const [notifications, setNotifications] = useState<Notification[]>([]);
     const authCtx = useContext(AuthContext);
     const router = useRouter();
+    useEffect(() => {
+        fetch('http://localhost:8888/notification', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then(res => res.json())
+            .then(data => {
+                setNotifications(data);
+            });
+    }, []);
     const dataMenu = [
         {
             id: 1,
@@ -101,6 +114,9 @@ export const Header = ({ user }: HeaderProps) => {
             <div className="navbar-right flex justify-end items-center">
                 <div className="user mr-14 flex justify-end items-center">
                     <ToggleSwitchTheme />
+                    <ItemNotification
+                        notifications={notifications}
+                    ></ItemNotification>
                     <ButtonFullScreen icon="bi bi-arrows-fullscreen" />
                     <Dropdown contentData={dataMenu}>
                         <AvatarUser name={authCtx.user?.email} />
