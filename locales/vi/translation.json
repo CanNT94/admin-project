@@ -1,0 +1,8 @@
+{
+    "text": {
+        "home": "Trang chủ",
+        "main_menu": "Menu Cha",
+        "sub_menu": "Menu con"
+    },
+    "menu": "{{label}}"
+}

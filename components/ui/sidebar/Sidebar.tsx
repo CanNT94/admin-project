@@ -3,12 +3,14 @@ import { useAppSelector } from '../../../store/hooks';
 import { selectMenu } from '../../../store/menuSlice';
 import { MenuStateEnum } from '../../../enum/enum';
 import { Menu, SubMenu } from '../../../model/menu';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
 const Sidebar = () => {
     const [menuData, setMenuData] = useState<Menu[]>([]);
     const [menuSelected, setMenuSelected] = useState<Menu>();
     const [subMenuSelected, setSubMenuSelected] = useState<SubMenu>();
-
+    const { t } = useTranslation();
     useEffect(() => {
         fetch('http://localhost:8888/menu', {
             method: 'GET',
@@ -53,7 +55,7 @@ const Sidebar = () => {
                                         <i
                                             className={`text-3xl ${menu.iconClassName}`}
                                         ></i>
-                                        {menu.label}
+                                        {t('menu', { returnObjects: true, label: `${menu.label}`})}
                                     </a>
                                 </li>
                             ))}

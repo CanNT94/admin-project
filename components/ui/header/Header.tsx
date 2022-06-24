@@ -25,7 +25,7 @@ const AvatarUser = dynamic(() => import('../avatarUser/AvatarUser'), {
 
 const dataLanguage = [
     { id: 'en', name: 'English' },
-    { id: 'vn', name: 'VietNam' },
+    { id: 'vi', name: 'VietNam' },
 ];
 
 const languageActive = { id: 'en', title: 'English' };

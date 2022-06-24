@@ -8,7 +8,7 @@ const ToggleSwitchTheme = () => {
     };
 
     return (
-        <div className="btn-switch-theme mr-2">
+        <div className="btn-switch-theme mx-2">
             <button
                 id="tooltip_switch"
                 type="button"

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import useOutside from '../../../hooks/useOutside';
+import { useTranslation } from 'react-i18next';
 
 interface DropDownProps {
     dataLanguage: {
@@ -16,6 +17,12 @@ const SwitcherLanguage = ({ dataLanguage, languageActive }: DropDownProps) => {
     const [title, setTitle] = useState<string>(languageActive.id);
     const ref = useRef(null);
     const visible = useOutside(ref);
+    const { i18n } = useTranslation();
+ 
+    const handleClickSwitcherLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+        setTitle(lng);
+    }
 
     return (
         <div className="relative switcher-language ml-2" ref={ref}>
@@ -28,7 +35,7 @@ const SwitcherLanguage = ({ dataLanguage, languageActive }: DropDownProps) => {
                         <div
                             className="px-4 py-2 text-left text-sm hover:bg-gray-200"
                             key={item.id}
-                            onClick={() => setTitle(item.id)}
+                            onClick={() => handleClickSwitcherLanguage(item.id)}
                         >
                             {item.name}
                         </div>
