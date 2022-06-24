@@ -1,5 +1,5 @@
-import React, { MouseEventHandler } from 'react';
-import useOutside from '../../../hooks/useOutside';
+import React, { useState } from 'react';
+import useClickOutside from '../../../hooks/useOutside';
 
 interface IDropDownProps {
     children?: React.ReactNode;
@@ -11,11 +11,12 @@ interface IDropDownProps {
 
 const Dropdown = ({ children, contentData }: IDropDownProps) => {
     const ref = React.useRef(null);
-    const visible = useOutside(ref);
+    const [visible, setVisible] = useState<boolean>(false);
+    useClickOutside(ref, () => setVisible(false));
     
     return (
-        <div className="relative dropdown-menu-custom w-36">
-            <button ref={ref}>{children}</button>
+        <div className="relative dropdown-menu-custom w-36" ref={ref}>
+            <button onClick={() => setVisible(!visible)}>{children}</button>
             {visible === true && (
                 <ul className="px-0 py-2 w-40 z-50 bg-white border border-slate-400 rounded-xl absolute top-14 right-0">
                     {contentData.map(item => (

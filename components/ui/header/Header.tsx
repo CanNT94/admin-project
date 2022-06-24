@@ -114,9 +114,9 @@ export const Header = ({ user }: HeaderProps) => {
             <div className="navbar-right flex justify-end items-center">
                 <div className="user mr-14 flex justify-end items-center">
                     <ToggleSwitchTheme />
-                    <ItemNotification
+                    {/* <ItemNotification
                         notifications={notifications}
-                    ></ItemNotification>
+                    ></ItemNotification> */}
                     <ButtonFullScreen icon="bi bi-arrows-fullscreen" />
                     <Dropdown contentData={dataMenu}>
                         <AvatarUser name={authCtx.user?.email} />
