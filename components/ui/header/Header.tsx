@@ -1,75 +1,114 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { User } from '../../../model/user';
+import { ButtonFullScreen } from '../butonFullScreen';
+import { Dropdown } from '../dropdown';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import Input from '../input/input';
+import MenuButton from '../button/MenuButton';
+import logo from '../../../public/assets/images/smartosc_logo.png';
+import AuthContext from '../../../context/auth-context';
 
-import './header.css';
-import { Button } from '../button/Button';
-
-type User = {
-    name: string;
-};
+import { ToggleSwitchTheme } from '../ToggleSwitchTheme';
+import { SwitcherLanguage } from '../SwitcherLanguage';
 
 interface HeaderProps {
     user?: User;
-    onLogin: () => void;
-    onLogout: () => void;
-    onCreateAccount: () => void;
 }
+const AvatarUser = dynamic(() => import('../avatarUser/AvatarUser'), {
+    ssr: false,
+});
 
-export const Header = ({
-    user,
-    onLogin,
-    onLogout,
-    onCreateAccount,
-}: HeaderProps) => (
-    <header>
-        <div className="wrapper">
-            <div>
-                <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <g fill="none" fillRule="evenodd">
-                        <path
-                            d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-                            fill="#FFF"
-                        />
-                        <path
-                            d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-                            fill="#555AB9"
-                        />
-                        <path
-                            d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-                            fill="#91BAF8"
-                        />
-                    </g>
-                </svg>
-                <h1>Acme</h1>
+const dataLanguage = [
+    { id: 'en', name: 'English' },
+    { id: 'vn', name: 'VietNam' },
+];
+
+const languageActive = { id: 'en', title: 'English' };
+
+export const Header = ({ user }: HeaderProps) => {
+    const authCtx = useContext(AuthContext);
+    const router = useRouter();
+    const dataMenu = [
+        {
+            id: 1,
+            name: (
+                <Link href={'/account'} passHref>
+                    Account
+                </Link>
+            ),
+        },
+        {
+            id: 2,
+            name: (
+                <Link href={'/features'} passHref>
+                    Features
+                </Link>
+            ),
+        },
+        {
+            id: 3,
+            name: (
+                <Link href={'/history'} passHref>
+                    History
+                </Link>
+            ),
+        },
+        {
+            id: 4,
+            name: (
+                <Link href={'/support'} passHref>
+                    Support
+                </Link>
+            ),
+        },
+        {
+            id: 5,
+            name: !authCtx.user ? (
+                <Link href={'/login'} passHref>
+                    Sign In
+                </Link>
+            ) : (
+                <button onClick={authCtx.logout}>Sign Out</button>
+            ),
+        },
+    ];
+
+    return (
+        <nav className="navbar fixed-top">
+            <div className="d-flex align-items-center navbar-left">
+                <MenuButton />
+                <Input
+                    className="w-64"
+                    placeholder="Search"
+                    icon="bi bi-search"
+                    type="text"
+                ></Input>
+                <SwitcherLanguage
+                    dataLanguage={dataLanguage}
+                    languageActive={languageActive}
+                />
             </div>
-            <div>
-                {user ? (
-                    <>
-                        <span className="welcome">
-                            Welcome, <b>{user.name}</b>!
-                        </span>
-                        <Button
-                            size="small"
-                            onClick={onLogout}
-                            label="Log out"
-                        />
-                    </>
-                ) : (
-                    <>
-                        <Button size="small" onClick={onLogin} label="Log in" />
-                        <Button
-                            primary
-                            size="small"
-                            onClick={onCreateAccount}
-                            label="Sign up"
-                        />
-                    </>
-                )}
+            <div
+                className="navbar-logo"
+                role="button"
+                onClick={() => router.push('/')}
+            >
+                <Image className="logo" src={logo} layout="fill"></Image>
             </div>
-        </div>
-    </header>
-);
+            <div className="navbar-right flex justify-end items-center">
+                <div className="user mr-14 flex justify-end items-center">
+                    <ToggleSwitchTheme />
+                    <ButtonFullScreen icon="bi bi-arrows-fullscreen" />
+                    <Dropdown contentData={dataMenu}>
+                        <AvatarUser name={authCtx.user?.email} />
+                    </Dropdown>
+                </div>
+            </div>
+        </nav>
+    );
+};
+
+export default Header;

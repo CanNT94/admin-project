@@ -27,23 +27,9 @@ const Login = () => {
             });
     }, []);
 
-    // let dataList: any[] = [];
-    // fetch('http://localhost:8888/notification', {
-    //     method: 'GET',
-    //     headers: { 'Content-Type': 'application/json' },
-    // })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         dataList.push(data);
-    //         setDatas(dataList[0]);
-    //     });
-    console.log('daattatata', datas);
-    // const test1 = dataList[0];
-    // console.log('hehe', dataList[0]);
-
     return (
         <>
-            <div className="h1">Home Page</div>
+            <div className="flex justify-center h1">Home Page</div>;
             <div>
                 <div className="">
                     <svg

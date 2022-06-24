@@ -1,0 +1,122 @@
+@import "variables.module.scss";
+@import "header";
+@import "input";
+@import "sidebar";
+@import "button";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: $background-color !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    margin: 145px 60px 40px 410px;
+    transition: margin-left .3s;
+}
+
+
+
+// Item Dropdown
+.item-dropdown {
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    &:last-child {
+        margin-top: 0.9375rem;
+        border-top: 1px solid #dee2e6;
+    }
+}
+// End
+
+.btn-switch-theme button {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 44px;
+    height: 22px;
+    line-height: 20px;
+    padding: 0;
+    vertical-align: middle;
+    border-radius: 20px 20px;
+    border: 1px solid #d7d7d7;
+    background-color: #d7d7d7;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(.35,0,.25,1);
+}
+
+.btn-switch-theme button:before {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 4px;
+    top: 4px;
+    border-radius: 50% 50%;
+    background-color: #fff;
+    content: " ";
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 26%);
+    transform: scale(1);
+    transition: left .3s cubic-bezier(.35,0,.25,1);
+    animation-timing-function: cubic-bezier(.35,0,.25,1);
+    animation-duration: .3s;
+    animation-name: unset;
+}
+
+.btn-switch-theme button.dark-theme {
+    border-color: #922C88;
+    background-color: #922C88;
+}
+
+.btn-switch-theme button.dark-theme:before {
+    left: auto;
+    right: 4px;
+}
+
+.switcher-language .language-button {
+    background: #f8f8f8;
+    border: initial;
+    font-size: .8rem;
+    color: #8f8f8f;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+}
+
+.switcher-language .language-button:focus {
+    box-shadow: none;
+    color: #212529;
+    background-color: #dae0e5;
+    border-color: #d3d9df;
+}
+
+.buy-action .btn-outline-primary {
+    color: #922c88;
+    border-color: #922c88;
+    padding: 0.45rem 1rem;
+    font-size: .8rem;
+    line-height: 1.5;
+    border-radius: 20px;
+}
+
+.buy-action .btn-outline-primary:hover {
+    background-color: #922c88;
+    color: #ffffff;
+    border-color: #922c88;
+}
