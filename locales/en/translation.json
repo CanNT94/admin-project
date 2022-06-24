@@ -1,0 +1,8 @@
+{
+    "text": {
+        "home": "Home page",
+        "main_menu": "Main Menu",
+        "sub_menu": "Sub menu"
+    },
+    "menu": "{{label}}"
+}
