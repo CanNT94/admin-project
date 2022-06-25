@@ -1,0 +1,95 @@
+/*
+You do not need to worry about .error {} colliding with any other `.css` or
+`.module.css` files!
+*/
+.sliderWapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.sliderItems {
+    display: flex;
+}
+.navPre {
+    display: inline-block;
+    position: absolute;
+    font-size: 30px;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    z-index: 1;
+}
+
+.navNext {
+    display: inline-block;
+    position: absolute;
+    font-size: 30px;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    z-index: 1;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    z-index: 1;
+}
+
+.dotsItem {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 3px;
+}
+
+.dotsItemActive {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #000;
+    margin: 0 3px;
+}
+
+.SliderItem {
+    position: relative;
+    flex: 0 0 100%;
+}
+.SliderItemContent {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 75px;
+    max-width: 70%;
+}
+
+.centerText {
+    margin: 0 auto ;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.rightText {
+    left: auto;
+    right: 0;
+}
+
+.SliderItemTitle , .SliderItemDercription{
+    color: #FFF;
+}
+
+.SliderItemLink {
+    text-transform: uppercase;
+    color: #922C88;
+}
+
+.SliderItemLink:hover {
+    color: #fc0000;
+}
