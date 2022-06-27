@@ -21,13 +21,16 @@ const SwitcherLanguage = ({ dataLanguage, languageActive }: DropDownProps) => {
     const handleClickSwitcherLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
         setTitle(lng);
-    }
+    };
 
     useClickOutside(ref, () => setVisible(false));
-    
+
     return (
         <div className="relative switcher-language ml-2" ref={ref}>
-            <button className="language-button dropdown-toggle btn btn-light btn-sm w-100 text-uppercase" onClick={() => setVisible(!visible)}>
+            <button
+                className="language-button dropdown-toggle btn btn-light btn-sm w-100 text-uppercase"
+                onClick={() => setVisible(!visible)}
+            >
                 <span className="label">{title}</span>
             </button>
             {visible === true && (

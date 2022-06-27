@@ -13,7 +13,7 @@ const Dropdown = ({ children, contentData }: IDropDownProps) => {
     const ref = React.useRef(null);
     const [visible, setVisible] = useState<boolean>(false);
     useClickOutside(ref, () => setVisible(false));
-    
+
     return (
         <div className="relative dropdown-menu-custom w-36" ref={ref}>
             <button onClick={() => setVisible(!visible)}>{children}</button>

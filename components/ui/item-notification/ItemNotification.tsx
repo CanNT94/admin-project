@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Notification } from '../../../model/notification';
 import useOutside from '../../../hooks/useOutside';
 
@@ -8,11 +8,11 @@ type ItemNotificationProps = {
 
 const ItemNotification = ({ notifications = [] }: ItemNotificationProps) => {
     const ref = useRef(null);
-    const visible = useOutside(ref);
-    
+    const [visible, setVisible] = useState<boolean>(false);
+    useOutside(ref, () => setVisible(false));
     return (
         <div className="flex mx-2 relative" ref={ref}> 
-            <i className="bi bi-bell">
+            <i className="bi bi-bell" onClick={() => setVisible(!visible)}>
                 {visible && (
                     <div className="border bg-white  rounded-md mt-2 overflow-y-auto w-64 h-72 absolute right-0 left-auto">
                         {notifications?.length > 0 &&
