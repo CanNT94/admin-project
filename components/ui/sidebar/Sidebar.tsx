@@ -4,8 +4,10 @@ import { selectMenu } from '../../../store/menuSlice';
 import { MenuStateEnum } from '../../../enum/enum';
 import { Menu, SubMenu } from '../../../model/menu';
 import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/router';
 
 const Sidebar = () => {
+    const router = useRouter();
     const [menuData, setMenuData] = useState<Menu[]>([]);
     const [menuSelected, setMenuSelected] = useState<Menu>();
     const [subMenuSelected, setSubMenuSelected] = useState<SubMenu>();
@@ -78,7 +80,11 @@ const Sidebar = () => {
                                     }`}
                                     onClick={() => setSubMenuSelected(subMenu)}
                                 >
-                                    <a>
+                                    <a
+                                        onClick={() =>
+                                            router.push(subMenu.url as string)
+                                        }
+                                    >
                                         <i
                                             className={`mr-2 text-base ${subMenu.iconClassName}`}
                                         ></i>

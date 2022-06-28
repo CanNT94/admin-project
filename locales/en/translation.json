@@ -5,9 +5,7 @@
     "menu": {
         "component": "Component",
         "page": "Page",
-        "input": "Input",
-        "dropdown": "Dropdown",
-        "button": "Button",
-        "card": "Card"
+        "slider": "Slider",
+        "grid-image": "Grid Image"
     }
 }

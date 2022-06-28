@@ -5,9 +5,7 @@
     "menu": {
         "component": "Thành phần",
         "page": "Trang",
-        "input": "Nhập",
-        "dropdown": "Lựa chọn",
-        "button": "Nút bấm",
-        "card": "Thẻ"
+        "slider": "Vuốt trượt",
+        "grid-image": "Lưới ảnh"
     }
 }

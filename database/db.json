@@ -53,27 +53,9 @@
             "subMenu": [
                 {
                     "id": 1,
-                    "iconClassName": "bi bi-archive",
-                    "label": "menu.input",
-                    "url": "/input"
-                },
-                {
-                    "id": 2,
-                    "iconClassName": "bi bi-list-task",
-                    "label": "menu.dropdown",
-                    "url": "/dropdown"
-                },
-                {
-                    "id": 3,
-                    "iconClassName": "bi bi-menu-button-wide",
-                    "label": "menu.button",
-                    "url": "/button"
-                },
-                {
-                    "id": 4,
-                    "iconClassName": "bi bi-credit-card-2-front",
-                    "label": "menu.card",
-                    "url": "/input"
+                    "iconClassName": "bi bi-sliders",
+                    "label": "menu.slider",
+                    "url": "/slider"
                 }
             ]
         },
@@ -84,9 +66,9 @@
             "subMenu": [
                 {
                     "id": 1,
-                    "iconClassName": "bi bi-credit-card-2-front",
-                    "label": "menu.card",
-                    "url": "/card"
+                    "iconClassName": "bi bi-ui-checks-grid",
+                    "label": "menu.grid-image",
+                    "url": "/grid-image"
                 }
             ]
         }
