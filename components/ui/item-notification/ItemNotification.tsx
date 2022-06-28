@@ -11,8 +11,11 @@ const ItemNotification = ({ notifications = [] }: ItemNotificationProps) => {
     const [visible, setVisible] = useState<boolean>(false);
     useOutside(ref, () => setVisible(false));
     return (
-        <div className="flex mx-2 relative" ref={ref}> 
-            <i className="bi bi-bell" onClick={() => setVisible(!visible)}>
+        <div className="flex mx-2 relative" ref={ref}>
+            <i
+                className="bi bi-bell cursor-pointer"
+                onClick={() => setVisible(!visible)}
+            >
                 {visible && (
                     <div className="border bg-white  rounded-md mt-2 overflow-y-auto w-64 h-72 absolute right-0 left-auto">
                         {notifications?.length > 0 &&
@@ -45,7 +48,7 @@ const ItemNotification = ({ notifications = [] }: ItemNotificationProps) => {
                 <p className="text-xs text-center flex justify-center">
                     {notifications.length}
                 </p>
-            </div>     
+            </div>
         </div>
     );
 };

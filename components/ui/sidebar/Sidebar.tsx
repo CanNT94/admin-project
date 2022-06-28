@@ -4,7 +4,6 @@ import { selectMenu } from '../../../store/menuSlice';
 import { MenuStateEnum } from '../../../enum/enum';
 import { Menu, SubMenu } from '../../../model/menu';
 import { useTranslation } from 'react-i18next';
-import i18next from 'i18next';
 
 const Sidebar = () => {
     const [menuData, setMenuData] = useState<Menu[]>([]);
@@ -55,7 +54,7 @@ const Sidebar = () => {
                                         <i
                                             className={`text-3xl ${menu.iconClassName}`}
                                         ></i>
-                                        {t('menu', { returnObjects: true, label: `${menu.label}`})}
+                                        {t(`${menu.label}`)}
                                     </a>
                                 </li>
                             ))}
@@ -83,7 +82,7 @@ const Sidebar = () => {
                                         <i
                                             className={`mr-2 text-base ${subMenu.iconClassName}`}
                                         ></i>
-                                        {subMenu.label}
+                                        {t(`${subMenu.label}`)}
                                     </a>
                                 </li>
                             ))}

@@ -1,8 +1,13 @@
 {
     "text": {
-        "home": "Trang chủ",
-        "main_menu": "Menu Cha",
-        "sub_menu": "Menu con"
+        "home": "Trang chủ"
     },
-    "menu": "{{label}}"
+    "menu": {
+        "component": "Thành phần",
+        "page": "Trang",
+        "input": "Nhập",
+        "dropdown": "Lựa chọn",
+        "button": "Nút bấm",
+        "card": "Thẻ"
+    }
 }

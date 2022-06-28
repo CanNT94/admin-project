@@ -1,8 +1,13 @@
 {
     "text": {
-        "home": "Home page",
-        "main_menu": "Main Menu",
-        "sub_menu": "Sub menu"
+        "home": "Home page"
     },
-    "menu": "{{label}}"
+    "menu": {
+        "component": "Component",
+        "page": "Page",
+        "input": "Input",
+        "dropdown": "Dropdown",
+        "button": "Button",
+        "card": "Card"
+    }
 }
