@@ -7,20 +7,8 @@ export interface IMasonry {
 }
 
 const Masonry = ({ children, columns, gap }: IMasonry) => {
-    console.log(typeof children);
-    
-    const columnWrapper:any = {};
-    const result = [];
-    // create columns
-    
-    const createColumns = (col: number) => {
-        
-    }
-
-    const col = createColumns(columns ?? 0);  
-
     return (
-        <div className="masonry">
+        <div className="masonry" style={{columnCount: columns, columnGap: gap}}>
             {children}
         </div>
     )

@@ -1,0 +1,8 @@
+.item-masonry {
+    break-inside: avoid;
+    margin-bottom: 25px;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
