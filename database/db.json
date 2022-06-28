@@ -1,95 +1,168 @@
 {
-    "users": [
+  "users": [
+    {
+      "email": "nguyenthiencan94@gmail.com",
+      "password": "$2a$10$5fHur1UWGgB8rh1q/Vmm4u7bYnE12gAHYDtcaV2FvvnqBgR9FJuXe",
+      "userName": "cannt",
+      "id": 1
+    },
+    {
+      "email": "cannt@smartosc.com",
+      "password": "$2a$10$JTFCyKer3rVXiyExZWXZQOiBSfWldzd5a3FZJpaJlspuqKOcvFiEC",
+      "userName": "nguyenthiencan",
+      "id": 2
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$Gnubce5HrNdYsyozp34Rr.QvE1S5d7po9mLbjH1vUSvCAtXEY.j62",
+      "userName": "admin",
+      "id": 3
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$KbWPE6St/mbhpTUKHzmR.uF2JRHfNpX6GJLXIaJozpp6p3lvJj2l2",
+      "userName": "test",
+      "id": 4
+    }
+  ],
+  "notification": [
+    {
+      "id": 1,
+      "img": "https://images.unsplash.com/photo-1560790671-b76ca4de55ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=868&q=80",
+      "title": "This is title 1",
+      "time": "2013"
+    },
+    {
+      "id": 2,
+      "img": "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80",
+      "title": "This is title 2",
+      "time": "2014"
+    },
+    {
+      "id": 3,
+      "img": "https://images.unsplash.com/photo-1495231916356-a86217efff12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
+      "title": "This is title 3",
+      "time": "2015"
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "iconClassName": "bi bi-shop",
+      "label": "Component",
+      "subMenu": [
         {
-            "email": "nguyenthiencan94@gmail.com",
-            "password": "$2a$10$5fHur1UWGgB8rh1q/Vmm4u7bYnE12gAHYDtcaV2FvvnqBgR9FJuXe",
-            "userName": "cannt",
-            "id": 1
+          "id": 1,
+          "iconClassName": "bi bi-archive",
+          "label": "Input",
+          "url": "/input"
         },
         {
-            "email": "cannt@smartosc.com",
-            "password": "$2a$10$JTFCyKer3rVXiyExZWXZQOiBSfWldzd5a3FZJpaJlspuqKOcvFiEC",
-            "userName": "nguyenthiencan",
-            "id": 2
+          "id": 2,
+          "iconClassName": "bi bi-list-task",
+          "label": "Dropdown",
+          "url": "/dropdown"
         },
         {
-            "email": "admin@gmail.com",
-            "password": "$2a$10$Gnubce5HrNdYsyozp34Rr.QvE1S5d7po9mLbjH1vUSvCAtXEY.j62",
-            "userName": "admin",
-            "id": 3
+          "id": 3,
+          "iconClassName": "bi bi-menu-button-wide",
+          "label": "Button",
+          "url": "/button"
         },
         {
-            "email": "test@gmail.com",
-            "password": "$2a$10$KbWPE6St/mbhpTUKHzmR.uF2JRHfNpX6GJLXIaJozpp6p3lvJj2l2",
-            "userName": "test",
-            "id": 4
+          "id": 4,
+          "iconClassName": "bi bi-credit-card-2-front",
+          "label": "Card",
+          "url": "/input"
         }
-    ],
-
-    "notification": [
+      ]
+    },
+    {
+      "id": 2,
+      "iconClassName": "bi bi-archive",
+      "label": "Page",
+      "subMenu": [
         {
-            "id": 1,
-            "img": "https://images.unsplash.com/photo-1560790671-b76ca4de55ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=868&q=80",
-            "title": "This is title 1",
-            "time": "2013"
-        },
-        {
-            "id": 2,
-            "img": "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80",
-            "title": "This is title 2",
-            "time": "2014"
-        },
-        {
-            "id": 3,
-            "img": "https://images.unsplash.com/photo-1495231916356-a86217efff12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
-            "title": "This is title 3",
-            "time": "2015"
+          "id": 1,
+          "iconClassName": "bi bi-credit-card-2-front",
+          "label": "Card",
+          "url": "/card"
         }
-    ],
-    "menu": [
-        {
-            "id": 1,
-            "iconClassName": "bi bi-shop",
-            "label": "Component",
-            "subMenu": [
-                {
-                    "id": 1,
-                    "iconClassName": "bi bi-archive",
-                    "label": "Input",
-                    "url": "/input"
-                },
-                {
-                    "id": 2,
-                    "iconClassName": "bi bi-list-task",
-                    "label": "Dropdown",
-                    "url": "/dropdown"
-                },
-                {
-                    "id": 3,
-                    "iconClassName": "bi bi-menu-button-wide",
-                    "label": "Button",
-                    "url": "/button"
-                },
-                {
-                    "id": 4,
-                    "iconClassName": "bi bi-credit-card-2-front",
-                    "label": "Card",
-                    "url": "/input"
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "iconClassName": "bi bi-archive",
-            "label": "Page",
-            "subMenu": [
-                {
-                    "id": 1,
-                    "iconClassName": "bi bi-credit-card-2-front",
-                    "label": "Card",
-                    "url": "/card"
-                }
-            ]
-        }
-    ]
+      ]
+    }
+  ],
+  "sellers": [
+    {
+      "id": 1,
+      "name": "Marble Cake",
+      "sales": 1647,
+      "stock": 62
+    },
+    {
+      "id": 2,
+      "name": "Fat Rascal",
+      "sales": 1240,
+      "stock": 48
+    },
+    {
+      "id": 3,
+      "name": "Chocolate Cake",
+      "sales": 1080,
+      "stock": 57
+    },
+    {
+      "id": 4,
+      "name": "Goose Breast",
+      "sales": 1014,
+      "stock": 41
+    },
+    {
+      "id": 5,
+      "name": "Petit Gâteau",
+      "sales": 985,
+      "stock": 23
+    },
+    {
+      "id": 6,
+      "name": "Salzburger Nockerl",
+      "sales": 962,
+      "stock": 34
+    },
+    {
+      "id": 7,
+      "name": "Napoleonshat",
+      "sales": 921,
+      "stock": 31
+    },
+    {
+      "id": 8,
+      "name": "Cheesecake",
+      "sales": 887,
+      "stock": 21
+    },
+    {
+      "id": 9,
+      "name": "Financier",
+      "sales": 865,
+      "stock": 53
+    },
+    {
+      "id": 10,
+      "name": "Genoise",
+      "sales": 824,
+      "stock": 41
+    },
+    {
+      "id": 11,
+      "name": "Gingerbread",
+      "sales": 714,
+      "stock": 12
+    },
+    {
+      "id": 12,
+      "name": "Magdalena",
+      "sales": 702,
+      "stock": 34
+    }
+  ]
 }
