@@ -29,7 +29,7 @@ const TableSeller = ({ dataSource, columns }: ITableSellerProps) => {
                     ))}
                 </tbody>
             </table>
-            <Panigation total={8} current_page={1} per_page={6} />
+            <Panigation total={15} current_page={1} per_page={6} />
         </div>
     );
 };

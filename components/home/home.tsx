@@ -66,7 +66,6 @@ const Login = () => {
         <>
             <div className="container-fluid">
                 <div className="dashboard-wrapper">
-                    {t('text.home')}
                     <TableSeller dataSource={sellerData} columns={columns} />
                 </div>
             </div>

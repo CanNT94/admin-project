@@ -15,6 +15,14 @@ const Panigation = ({ total, per_page, current_page, onChange }: IPanigationProp
         return (totalPage = Math.ceil(total / per_page));
     };
 
+    const next = () => {
+        setIsActive((item) => item+=1);
+    }
+
+    const prev = () => {
+        setIsActive((item) => item-=1);
+    }
+
     const total_page = getTotalPage(total ?? 0, per_page ?? 0);
 
     const renderItem = () => {
@@ -45,7 +53,7 @@ const Panigation = ({ total, per_page, current_page, onChange }: IPanigationProp
     return (
         <ul className="flex items-center justify-center pagination">
             <li className={`page-item ${isActive === 1 ? 'disabled' : ''}`}>
-                <button className="link-page prev">
+                <button className="link-page prev" onClick={() => prev()}>
                     <i className="bi bi-chevron-left"></i>
                 </button>
             </li>
@@ -55,7 +63,7 @@ const Panigation = ({ total, per_page, current_page, onChange }: IPanigationProp
                     isActive === total_page ? 'disabled' : ''
                 }`}
             >
-                <button className="link-page next">
+                <button className="link-page next" onClick={() => next()}>
                     <i className="bi bi-chevron-right"></i>
                 </button>
             </li>
