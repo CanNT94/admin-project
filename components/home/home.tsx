@@ -19,20 +19,31 @@ const Login = () => {
 
     const randomImage = () => {
         const list: any[] = [];
-        for(let i = 1; i <= 40; i++){
-            list.push({id: i, url: `https://picsum.photos/200/300?random=${i}`, title: `title-${i}`});
+        for (let i = 1; i <= 40; i++) {
+            list.push({
+                id: i,
+                url: `https://picsum.photos/200/300?random=${i}`,
+                title: `title-${i}`,
+            });
         }
         return list;
-    }
+    };
 
-    const data = randomImage();   
+    const data = randomImage();
 
     return (
         <div className="container-fluid">
             <div className="dashboard-wrapper">
                 <Masonry columns={7} gap={10}>
                     {data.map(data => {
-                        return <Images key={data?.id} data={data} min={200} max={300} />
+                        return (
+                            <Images
+                                key={data?.id}
+                                data={data}
+                                min={200}
+                                max={300}
+                            />
+                        );
                     })}
                 </Masonry>
             </div>

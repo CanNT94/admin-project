@@ -9,3 +9,11 @@
         object-fit: cover;
     }
 }
+
+.item-masonry:hover .btn-save {
+    display: block;
+}
+
+.item-masonry:hover > img {
+    opacity: 0.8;
+}

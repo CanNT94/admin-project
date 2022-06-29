@@ -7,13 +7,17 @@ interface IImagesProps {
     max?: number;
 }
 
-const Images = ({ data, min, max }: IImagesProps) => { 
-    const hg = Number(min) +  Math.ceil(Math.random() * Number(max));
+// btn btn-primary btn-xs absolute top-0 right-0 rounded-full m-3 w-2
+const Images = ({ data, min, max }: IImagesProps) => {
+    const hg = Number(min) + Math.ceil(Math.random() * Number(max));
     return (
-        <div
-            className={`item-masonry item-${data.id}`}
-        >
-            <img src={data.url} alt={data.title} style={{height: hg}} />
+        <div className={`item-masonry item-${data.id} relative`}>
+            <img src={data.url} alt={data.title} style={{ height: hg }} />
+            <div className="btn-save hidden">
+                <button className="btn absolute top-3 right-3 !bg-red-600 text-white font-bold">
+                    Save
+                </button>
+            </div>
         </div>
     );
 };
