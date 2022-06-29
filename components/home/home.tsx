@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/auth-context';
 import { useRouter } from 'next/router';
 import { Masonry } from '../ui/masonry';
+import { Panigation } from '../ui/panigation';
 import dynamic from 'next/dynamic';
 const Images = dynamic(() => import('../ui/masonry/Images'), {
     ssr: false,
@@ -34,6 +35,7 @@ const Login = () => {
     return (
         <div className="container-fluid">
             <div className="dashboard-wrapper">
+                <Panigation total={200} per_page={10} current_page={1} maxPageToDispaly={5} />
                 <Masonry columns={7} gap={10}>
                     {data.map(data => {
                         return (

@@ -30,8 +30,20 @@ a {
 }
 
 main {
-    margin: 144px 60px 40px 144px;
+    margin: 145px 60px 40px 410px;
     transition: margin-left 0.3s;
+}
+
+.menu-sub-hidden {
+    main {
+        margin-left: 180px;
+    }
+}
+
+.main-hidden {
+    main {
+        margin-left: 60px;
+    }
 }
 
 // Item Dropdown

@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useAppSelector } from '../../../store/hooks';
-import { selectMenu } from '../../../store/menuSlice';
-import { MenuStateEnum } from '../../../enum/enum';
 import { Menu, SubMenu } from '../../../model/menu';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
@@ -26,18 +23,8 @@ const Sidebar = () => {
                 }
             });
     }, []);
-    const menuState = useAppSelector(selectMenu);
     return (
-        <div
-            className={`sidebar ${
-                menuState === MenuStateEnum.HIDE_ALL ? 'main-hidden' : ''
-            } ${
-                menuState === MenuStateEnum.MAIN_MENU ||
-                menuState === MenuStateEnum.HIDE_ALL
-                    ? 'sub-hidden'
-                    : ''
-            }`}
-        >
+        <div className="sidebar">
             <div className="main-menu">
                 <div className="scroll">
                     <div className="scrollbar-container ps">
