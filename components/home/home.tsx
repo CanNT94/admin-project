@@ -2,7 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/auth-context';
 import { useRouter } from 'next/router';
 import { Masonry } from '../ui/masonry';
-import Images from '../ui/masonry/Images';
+import dynamic from 'next/dynamic';
+const Images = dynamic(() => import('../ui/masonry/Images'), {
+    ssr: false,
+});
 
 const Login = () => {
     const router = useRouter();

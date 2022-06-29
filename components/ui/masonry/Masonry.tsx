@@ -13,11 +13,11 @@ const Masonry = ({ children, columns, gap }: IMasonry) => {
     const getColOnResize = (size: number) => {
         let cols = columns;
         if (size < 1440 && size > 1200) {
-            cols = 4
+            cols = 5
         } else if (size < 1200 && size > 1024) {
-            cols = 3
+            cols = 4
         } else if (size < 1024) {
-            cols = 2
+            cols = 3
         }   
         return cols;
     }
