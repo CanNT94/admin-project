@@ -1,12 +1,12 @@
-@import "variables.module.scss";
-@import "header";
-@import "input";
-@import "sidebar";
-@import "button";
-@import "table.scss";
-@import "panigation.scss";
-@import "slider";
-
+@import 'variables.module.scss';
+@import 'header';
+@import 'input';
+@import 'sidebar';
+@import 'button';
+@import 'table.scss';
+@import 'panigation.scss';
+@import 'slider';
+@import 'masonry.scss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,10 +31,20 @@ a {
 
 main {
     margin: 145px 60px 40px 410px;
-    transition: margin-left .3s;
+    transition: margin-left 0.3s;
 }
 
+.menu-sub-hidden {
+    main {
+        margin-left: 180px;
+    }
+}
 
+.main-hidden {
+    main {
+        margin-left: 60px;
+    }
+}
 
 // Item Dropdown
 .item-dropdown {
@@ -62,7 +72,7 @@ main {
     border: 1px solid #d7d7d7;
     background-color: #d7d7d7;
     cursor: pointer;
-    transition: all .3s cubic-bezier(.35,0,.25,1);
+    transition: all 0.3s cubic-bezier(0.35, 0, 0.25, 1);
 }
 
 .btn-switch-theme button:before {
@@ -73,19 +83,19 @@ main {
     top: 4px;
     border-radius: 50% 50%;
     background-color: #fff;
-    content: " ";
+    content: ' ';
     cursor: pointer;
     box-shadow: 0 2px 5px rgb(0 0 0 / 26%);
     transform: scale(1);
-    transition: left .3s cubic-bezier(.35,0,.25,1);
-    animation-timing-function: cubic-bezier(.35,0,.25,1);
-    animation-duration: .3s;
+    transition: left 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+    animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+    animation-duration: 0.3s;
     animation-name: unset;
 }
 
 .btn-switch-theme button.dark-theme {
-    border-color: #922C88;
-    background-color: #922C88;
+    border-color: #922c88;
+    background-color: #922c88;
 }
 
 .btn-switch-theme button.dark-theme:before {
@@ -96,7 +106,7 @@ main {
 .switcher-language .language-button {
     background: #f8f8f8;
     border: initial;
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: #8f8f8f;
     padding: 0.6rem 1rem;
     border-radius: 20px;
@@ -113,7 +123,7 @@ main {
     color: #922c88;
     border-color: #922c88;
     padding: 0.45rem 1rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
     line-height: 1.5;
     border-radius: 20px;
 }

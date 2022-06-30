@@ -1,0 +1,19 @@
+.item-masonry {
+    break-inside: avoid;
+    margin-bottom: 1.5625rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: zoom-in;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.item-masonry:hover .btn-save {
+    display: block;
+}
+
+.item-masonry:hover > img {
+    opacity: 0.8;
+}
