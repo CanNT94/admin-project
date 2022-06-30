@@ -44,7 +44,7 @@ const ItemNotification = ({ notifications = [] }: ItemNotificationProps) => {
                     </div>
                 )}
             </i>
-            <div className="w-5 h-4 border-1 rounded-full absolute -top-3 left-auto -right-3 text-pink-900 border-pink-900">
+            <div className="w-5 h-4 border-1 rounded-full absolute -top-3 left-auto -right-3 notification-color">
                 <p className="text-xs text-center flex justify-center">
                     {notifications.length}
                 </p>

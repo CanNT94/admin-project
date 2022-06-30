@@ -20,9 +20,9 @@
             }
             &.next,
             &.prev {
-                background: #6fb327;
+                background: $primary-color;
                 color: #fff;
-                border: 1px solid #6fb327;
+                border: 1px solid $primary-color;
             }
         }
         &.disabled {
@@ -36,8 +36,8 @@
         &.active {
             .link-page {
                 background: transparent;
-                border: 1px solid #6fb327;
-                color: #6fb327;
+                border: 1px solid $primary-color;
+                color: $primary-color;
             }
         }
     }
