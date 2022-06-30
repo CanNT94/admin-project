@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export const useWindowScoll = () => {
+const useWindowScoll = () => {
     const [height, setHeight] = useState({ height: 0 });
     useEffect(() => {
         const onScroll = () => {            
