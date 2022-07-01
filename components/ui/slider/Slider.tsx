@@ -7,7 +7,9 @@ interface SliderProps {
     button?: boolean;
     indicator?: boolean;
     autoPlay?: boolean;
-    width?: number | string;
+    width?: number;
+    height?: number;
+    slidesToShow?: number;
 }
 const Slider = ({
     slides = [],
@@ -16,6 +18,8 @@ const Slider = ({
     indicator = false,
     autoPlay = true,
     width = 1000,
+    height = 400,
+    slidesToShow = 1,
 }: SliderProps) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     let slideInterval: number;
@@ -59,13 +63,19 @@ const Slider = ({
     };
 
     return (
-        <div className="slider" style={{ maxWidth: width }}>
+        <div className="slider" style={{ maxWidth: width, maxHeight: height }}>
             <div
                 className="slider-inner"
-                style={{ transform: `translateX(${-currentSlide * 100}%)` }}
+                style={{
+                    transform: `translateX(${
+                        (-currentSlide * 100) / slidesToShow
+                    }%)`,
+                }}
             >
                 {slides.map((slide, index) => (
                     <SliderItem
+                        width={width / slidesToShow}
+                        height={height}
                         slide={slide}
                         key={index}
                         stopSlide={stopSlideTimer}

@@ -1,8 +1,10 @@
+@import "variables.module";
+
 .slider {
   margin: 0 auto;
   overflow: hidden;
-  max-width: 900px;
   position: relative;
+  background-color: #D7D7D7;
 }
 
 .slider-inner {
@@ -42,6 +44,9 @@
   top: calc(50% - 25px);
   color: #f3f3f3;
   cursor: pointer;
+  :hover {
+    color: $primary-color;
+  }
 }
 .left {
   left: 0;
