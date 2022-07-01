@@ -1,5 +1,5 @@
 .navbar {
-  background: #fff;
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
   height: 100px;
   padding: 1.5rem 0;
   box-shadow: 0 1px 15px rgb(0 0 0 / 4%), 0 1px 6px rgb(0 0 0 / 4%);

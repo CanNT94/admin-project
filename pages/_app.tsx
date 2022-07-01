@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import { store } from '../store/store';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../translation/i18n';
+import { ThemeProvider } from 'next-themes';
 
 function MyApp({ Component, pageProps, ...appProps }: AppProps) {
     const isLogin = ['/login', '/sign-up'].includes(appProps.router.pathname);
@@ -18,9 +19,11 @@ function MyApp({ Component, pageProps, ...appProps }: AppProps) {
                 <Provider store={store}>
                     {isLogin && <Component {...pageProps} />}
                     {!isLogin && (
-                        <Layout>
-                            <Component {...pageProps} />
-                        </Layout>
+                        <ThemeProvider enableSystem={true} attribute="class">
+                            <Layout>
+                                <Component {...pageProps} />
+                            </Layout>
+                        </ThemeProvider>
                     )}
                 </Provider>
             </AuthContextProvider>

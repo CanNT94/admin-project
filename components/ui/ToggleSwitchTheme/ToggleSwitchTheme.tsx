@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useTheme } from 'next-themes';
 
 const ToggleSwitchTheme = () => {
-    const [isActive, setActive] = useState<boolean>(true);
-
-    const changeTheme = () => {
-        setActive(!isActive);
-    };
+    const { theme, setTheme } = useTheme();
 
     return (
         <div className="btn-switch-theme mx-2">
             <button
                 id="tooltip_switch"
                 type="button"
-                className={isActive ? 'default' : 'dark-theme '}
-                onClick={changeTheme}
+                className={theme !== 'dark' ? 'default' : 'dark-theme '}
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             >
                 <span className="switch-inner"></span>
             </button>

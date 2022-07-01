@@ -26,7 +26,7 @@ const SliderPage = () => {
                     interval={5000}
                     button={true}
                     indicator={true}
-                    autoPlay={true}
+                    autoPlay={false}
                 />
 
                 <div className="h3 flex justify-center mt-3">Multiple Item</div>
