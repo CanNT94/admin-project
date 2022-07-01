@@ -1,31 +1,58 @@
-import React, { Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { Masonry } from '../../components/ui/masonry';
+import { IImage } from '../../model/image';
+import { Loading } from '../../components/ui/loading';
 
 const Images = dynamic(() => import('../../components/ui/masonry/Images'), {
     ssr: false,
 });
 
 const GridImagesPage = () => {
-    const randomImage = () => {
-        const list: any[] = [];
-        for (let i = 1; i <= 40; i++) {
-            list.push({
-                id: i,
-                url: `https://picsum.photos/200/300?random=${i}`,
-                title: `title-${i}`,
+    const [dataImages, setDataImages] = useState<IImage[]>([]);
+    const [limit, setLimit] = useState<number>(20);
+    const [isFetching, setIsFetching] = useState(false);
+    useEffect(() => {
+        fetch(`http://localhost:8888/masonry?_limit=${limit}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then(res => res.json())
+            .then(data => {
+                setDataImages(data);
             });
-        }
-        return list;
+    }, [limit]);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        if (!isFetching) return;
+        fetchMoreListItems();
+    }, [isFetching]);
+
+    const handleScroll = () => {
+        if (
+            window.innerHeight + document.documentElement.scrollTop !==
+            document.documentElement.offsetHeight
+        )
+            return;
+        setIsFetching(true);
     };
 
-    const data = randomImage();
+    const fetchMoreListItems = () => {
+        setTimeout(() => {
+            setLimit(limit => (limit = limit + 10));
+            setIsFetching(false);
+        }, 4000);
+    };
 
-    const test = data.slice(0,10);
-    console.log(test.length);
+    console.log(isFetching);
     
-    
+
     return (
         <>
             <Head>
@@ -36,17 +63,15 @@ const GridImagesPage = () => {
                 <meta property="og:type" content="website" />
             </Head>
             <Masonry columns={7} gap={10}>
-                {test.map(data => {   
-                    const hg = 200 + Math.ceil(Math.random() * 300);                               
+                {dataImages.map(data => {
+                    const hg = 200 + Math.ceil(Math.random() * 300);                   
                     return (
-                        <Images
-                            key={data?.id}
-                            data={data}
-                            height={hg}
-                        />
-                    );
+                        <Images key={data?.id} data={data} height={hg} />
+                    )
                 })}
+                
             </Masonry>
+            {isFetching === true && <Loading />}
         </>
     );
 };
