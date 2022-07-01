@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SliderItem from './SliderItem';
-import SliderIndicator from './SliderIndicator';
-import SliderButton from './SliderButton';
+import { SliderButton, SliderIndicator, SliderItem } from './index';
 
 interface SliderProps {
     slides: string[];

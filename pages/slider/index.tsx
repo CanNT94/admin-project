@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React, { Fragment } from 'react';
-import Slider from '../../components/ui/slider/Slider';
+import { Slider } from '../../components/ui/slider';
 
 const SliderPage = () => {
     const slides = [
