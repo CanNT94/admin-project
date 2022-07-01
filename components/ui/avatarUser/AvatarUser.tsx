@@ -8,8 +8,12 @@ interface IAvatarProps {
 
 const AvatarUser = ({ name, srcImg, altImg }: IAvatarProps) => {
     return (
-        <div className="flex justify-center items-center">
-            <span className="text-xs leading-6">{name}</span>
+        <div className="flex justify-start items-center">
+            <span className="text-xs leading-6">
+                <a className="no-underline text-inherit" href="#" title={name}>
+                    {name}
+                </a>
+            </span>
             <span className="ml-3">
                 {srcImg === undefined ? (
                     <i

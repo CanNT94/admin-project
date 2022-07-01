@@ -1,7 +1,6 @@
 .item-masonry {
     break-inside: avoid;
-    margin-bottom: 1.5625rem;
-    border-radius: 1rem;
+    border-radius: 16px;
     overflow: hidden;
     cursor: zoom-in;
     img {
@@ -14,6 +13,20 @@
     display: block;
 }
 
-.item-masonry:hover > img {
-    opacity: 0.8;
+.masonny {
+    > div {
+        &:hover {
+            &::after {
+                content: '';
+                position: absolute;
+                background: rgba(0, 0, 0, 0.37);
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                border-radius: 16px;
+                z-index: -1;
+            }
+        }
+    }
 }
