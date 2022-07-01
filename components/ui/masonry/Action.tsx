@@ -1,8 +1,13 @@
 import React, { useRef, MutableRefObject, useState, useEffect } from 'react';
 import SendBox from './SendBox';
 import ShadowBox from './ShadowBox';
+import useOutside from '../../../hooks/useOutside';
 
 const Action = () => {
+    // const ref = useRef(null);
+    // const [visible, setVisible] = useState<boolean>(false);
+    // useOutside(ref, () => setVisible(false));
+
     const [isShown, setIsShown] = useState(false);
     const [isShown1, setIsShown1] = useState(false);
 
@@ -15,7 +20,6 @@ const Action = () => {
 
     return (
         <div>
-            {/* Test */}
             <div className="btn-save absolute top-3 right-3 bg-red-600 p-3 rounded-3xl text-white">
                 <button className="font-medium">Save</button>
             </div>
@@ -25,9 +29,11 @@ const Action = () => {
                         <i
                             className="bi bi-cloud-arrow-up"
                             onClick={handleClick1}
+                            // onClick={() => setVisible(!visible)}
                         ></i>
+                        {/* {visible && <SendBox />} */}
+                        {isShown1 && <SendBox />}
                     </span>
-                    {isShown1 && <SendBox />}
 
                     <span className="rounded-full bg-white w-8 h-8 flex justify-center items-center mr-2 mb-3 cursor-pointer ">
                         <i
