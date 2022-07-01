@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth-context';
 import { useRouter } from 'next/router';
 import { Panigation } from '../ui/panigation';
@@ -15,8 +15,14 @@ const Login = () => {
 
     return (
         <div className="container-fluid">
+            <div className="h3 flex justify-center">Pagination</div>
             <div className="dashboard-wrapper">
-                <Panigation total={200} per_page={10} current_page={1} maxPageToDispaly={5} />
+                <Panigation
+                    total={200}
+                    per_page={10}
+                    current_page={1}
+                    maxPageToDispaly={5}
+                />
             </div>
         </div>
     );

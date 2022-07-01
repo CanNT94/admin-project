@@ -53,6 +53,12 @@
             "subMenu": [
                 {
                     "id": 1,
+                    "iconClassName": "bi bi-house",
+                    "label": "menu.home",
+                    "url": "/"
+                },
+                {
+                    "id": 2,
                     "iconClassName": "bi bi-sliders",
                     "label": "menu.slider",
                     "url": "/slider"
