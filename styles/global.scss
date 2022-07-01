@@ -138,3 +138,13 @@ main {
     color: $primary-color;
     border-color: $primary-color;
 }
+
+.btn-primary {
+    border-color: $primary-color !important;
+    background-color: $primary-color !important;
+}
+
+.link-authenticate a {
+    color: $primary-color !important;
+    text-decoration: none !important;
+}

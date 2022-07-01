@@ -26,7 +26,7 @@ const SliderPage = () => {
                     interval={5000}
                     button={true}
                     indicator={true}
-                    autoPlay={true}
+                    autoPlay={false}
                 />
             </div>
         </Fragment>
