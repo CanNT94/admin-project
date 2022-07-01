@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useWindowSize from '../../../hooks/useWindowSize';
-import useWindowScoll from '../../../hooks/useWindowScoll';
 
 export interface IMasonry {
     columns?: number;
@@ -10,7 +9,6 @@ export interface IMasonry {
 
 const Masonry = ({ children, columns, gap }: IMasonry) => {
     const size = useWindowSize();
-    const hg = useWindowScoll();
 
     const getColOnResize = (size: number) => {
         let cols = columns;
