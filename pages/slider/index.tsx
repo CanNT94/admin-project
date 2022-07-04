@@ -48,6 +48,7 @@ const SliderPage = () => {
                     autoPlay={true}
                     button={true}
                     indicator={true}
+                    swipe={true}
                 >
                     {slides.map((slide, index) => (
                         <img
@@ -55,6 +56,7 @@ const SliderPage = () => {
                             alt={slide}
                             key={index}
                             style={{ height: '100%' }}
+                            draggable="false"
                         />
                     ))}
                 </Slider>

@@ -1,5 +1,6 @@
 import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import { SliderButton, SliderIndicator, SliderItem } from './index';
+import { useSwipeable } from 'react-swipeable';
 
 interface SliderProps {
     interval?: number;
@@ -10,6 +11,8 @@ interface SliderProps {
     height?: number;
     slidesToShow?: number;
     children?: ReactElement[];
+    swipe?: boolean;
+    swipeDuration?: number;
 }
 const Slider = ({
     interval = 3000,
@@ -20,6 +23,8 @@ const Slider = ({
     height = 400,
     slidesToShow = 1,
     children = [],
+    swipe = false,
+    swipeDuration = 500,
 }: SliderProps) => {
     const [currentSlide, setCurrentSlide] = useState(1);
     const slideInterval = useRef<number>();
@@ -57,13 +62,24 @@ const Slider = ({
         const index = currentSlide < children.length - 1 ? currentSlide + 1 : 0;
         setCurrentSlide(index);
     };
+    const handleSwipe = useSwipeable({
+        onSwipedLeft: () => next(),
+        onSwipedRight: () => prev(),
+        preventScrollOnSwipe: true,
+        trackMouse: swipe,
+        swipeDuration: swipeDuration,
+    });
     const switchIndex = (index: number) => {
         startSlideTimer();
         setCurrentSlide(index);
     };
 
     return (
-        <div className="slider" style={{ maxWidth: width, maxHeight: height }}>
+        <div
+            {...handleSwipe}
+            className="slider"
+            style={{ maxWidth: width, maxHeight: height }}
+        >
             <div
                 className="slider-inner"
                 style={{
