@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 interface SliderItemProps {
-    slide: string;
+    children?: ReactElement;
     width?: number;
     height?: number;
     stopSlide: () => void;
@@ -9,7 +9,7 @@ interface SliderItemProps {
 }
 
 const SliderItem = ({
-    slide,
+    children,
     stopSlide,
     startSlide,
     width,
@@ -22,11 +22,7 @@ const SliderItem = ({
             onMouseOut={startSlide}
             style={{ width: width, height: height }}
         >
-            <img
-                src={slide}
-                alt="slide"
-                style={{ display: 'block', width: '100%', height: '100%' }}
-            />
+            {children}
         </div>
     );
 };
