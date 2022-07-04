@@ -23,7 +23,7 @@ const Slider = ({
     height = 400,
     slidesToShow = 1,
     children = [],
-    swipe = false,
+    swipe = true,
     swipeDuration = 500,
 }: SliderProps) => {
     const [currentSlide, setCurrentSlide] = useState(1);
@@ -77,7 +77,7 @@ const Slider = ({
     return (
         <div
             {...handleSwipe}
-            className="slider"
+            className="slider cursor-pointer"
             style={{ maxWidth: width, maxHeight: height }}
         >
             <div
