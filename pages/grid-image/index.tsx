@@ -50,9 +50,6 @@ const GridImagesPage = () => {
         }, 1000);
     };
 
-    console.log(isFetching);
-    
-
     return (
         <>
             <Head>
@@ -62,13 +59,10 @@ const GridImagesPage = () => {
                 <meta property="og:description" content="Grid Images" />
                 <meta property="og:type" content="website" />
             </Head>
-            <Masonry gap={15} >
-                {dataImages.map(data => {                   
-                    return (
-                        <Images key={data?.id} data={data} />
-                    )
+            <Masonry gap={15}>
+                {dataImages.map(data => {
+                    return <Images key={data?.id} data={data} />;
                 })}
-                
             </Masonry>
             {isFetching === true && <Loading />}
         </>
