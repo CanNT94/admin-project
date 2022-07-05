@@ -1,8 +1,8 @@
 .masonry {
-	display: grid;
-	grid-auto-rows: minmax(20vh, 300px);
+    display: grid;
+    grid-auto-rows: minmax(20vh, 300px);
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	> div {		
+    > div {
         height: initial;
         margin: unset;
         width: initial;
@@ -20,14 +20,14 @@
                 height: 100%;
             }
         }
-	}
+    }
 }
 
 @keyframes slideInBottom {
     0% {
-      transform: translateY(-100%);
+        transform: translateY(-100%);
     }
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
 }
