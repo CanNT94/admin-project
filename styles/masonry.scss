@@ -1,13 +1,12 @@
 .masonry {
-    display: grid;
-    grid-auto-rows: minmax(20vh, 300px);
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    > div {
+	display: grid;
+	> div {		
         height: initial;
         margin: unset;
         width: initial;
         min-width: initial;
         animation: 1s ease-out 0s 1 slideInBottom;
+        transition: .4s ease all;
         &:nth-of-type(2n + 2) {
             grid-row: span 2;
         }
@@ -20,14 +19,89 @@
                 height: 100%;
             }
         }
+	}
+}
+
+.option-demo {
+    ul {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        padding: 0;
+        li {
+            font-size: 0;
+            border: 1px solid #878787;
+            height: 26px;
+            position: relative;
+            margin-right: 20px;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                width: 10px;
+                height: 20px;
+                background: #878787;
+                transition: all .3s;
+            }
+            &.col-3 {
+                width: 42px;
+                &::before {
+                    box-shadow: 13px 0 0 #878787, 26px 0 0 #878787;
+                }
+            }
+            &.col-4 {
+                width: 55px;
+                &::before {
+                    box-shadow: 13px 0 0 #878787, 26px 0 0 #878787, 39px 0 0 #878787;
+                }
+            }
+            &.col-5 {
+                width: 68px;
+                &::before {
+                    box-shadow: 13px 0 0 #878787, 26px 0 0 #878787, 39px 0 0 #878787, 52px 0 0 #878787;
+                }
+            }
+            &.col-6 {
+                width: 81px;
+                &::before {
+                    box-shadow: 13px 0 0 #878787, 26px 0 0 #878787, 39px 0 0 #878787, 52px 0 0 #878787, 65px 0 0 #878787;
+                }
+            }
+            &.active {
+                &::before {
+                    background: #222;
+                }
+                &.col-3 {
+                    &::before {
+                        box-shadow: 13px 0 0 #222, 26px 0 0 #222;
+                    }
+                }
+                &.col-4 {
+                    &::before {
+                        box-shadow: 13px 0 0 #222, 26px 0 0 #222, 39px 0 0 #222;
+                    }
+                }
+                &.col-5 {
+                    &::before {
+                        box-shadow: 13px 0 0 #222, 26px 0 0 #222, 39px 0 0 #222, 52px 0 0 #222;
+                    }
+                }
+                &.col-6 {
+                    &::before {
+                        box-shadow: 13px 0 0 #222, 26px 0 0 #222, 39px 0 0 #222, 52px 0 0 #222, 65px 0 0 #222;
+                    }
+                }
+            }
+        }
     }
 }
 
 @keyframes slideInBottom {
     0% {
-        transform: translateY(-100%);
+      transform: translateY(-100%);
     }
     100% {
-        transform: translateY(0);
+      transform: translateY(0);
     }
 }
