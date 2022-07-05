@@ -63,9 +63,6 @@ const SendBox = () => {
                         placeholder="Name or email"
                     />
                 </div>
-
-                <UserTest />
-                <UserTest />
                 <UserTest />
             </div>
         </div>

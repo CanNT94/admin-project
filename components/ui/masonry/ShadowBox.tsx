@@ -2,14 +2,20 @@ import React from 'react';
 
 const ShadowBox = () => {
     return (
-        <div className="w-80 bg-slate-100 absolute -top-2 mt-12 rounded-xl px-3">
-            <span className="text-sm">
+        <div className="w-80 bg-slate-100 absolute -top-2 mt-12 rounded-xl px-2 ">
+            <div className="text-sm mt-2 text-center">
                 This Pin was inspired by your recent activity
-            </span>
-            <div className="my-2 text-lg">
-                <button className="font-bold block mt-1">Hide Pin</button>
-                <button className="font-bold block mt-1">Download image</button>
-                <button className="font-bold block mt-1">Report Pin</button>
+            </div>
+            <div className="my-2 text-base">
+                <button className="font-bold block p-2 text-left w-full hover:bg-slate-200 focus:bg-violet-700  rounded-md">
+                    Hide Pin
+                </button>
+                <button className="font-bold block p-2 text-left w-full hover:bg-slate-200 rounded-md">
+                    Download image
+                </button>
+                <button className="font-bold block p-2 text-left w-full hover:bg-slate-200 rounded-md">
+                    Report Pin
+                </button>
             </div>
         </div>
     );
