@@ -73,7 +73,7 @@ const Signup = () => {
                     Sign up
                 </button>
 
-                <div className="text-center">
+                <div className="text-center link-authenticate ">
                     <p>
                         <Link href={'/login'} passHref>
                             Back to Login

@@ -4,6 +4,7 @@
     },
     "menu": {
         "component": "Component",
+        "home": "Home",
         "page": "Page",
         "slider": "Slider",
         "grid-image": "Grid Image"

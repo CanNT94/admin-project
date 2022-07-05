@@ -1,33 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import SliderItem from './SliderItem';
-import SliderIndicator from './SliderIndicator';
-import SliderButton from './SliderButton';
+import React, { ReactElement, useEffect, useRef, useState } from 'react';
+import { SliderButton, SliderIndicator, SliderItem } from './index';
+import { useSwipeable } from 'react-swipeable';
 
 interface SliderProps {
-    slides: string[];
     interval?: number;
     button?: boolean;
     indicator?: boolean;
     autoPlay?: boolean;
-    width?: number | string;
+    width?: number;
+    height?: number;
+    slidesToShow?: number;
+    children?: ReactElement[];
+    swipe?: boolean;
+    swipeDuration?: number;
 }
 const Slider = ({
-    slides = [],
     interval = 3000,
     button = false,
     indicator = false,
     autoPlay = true,
     width = 1000,
+    height = 400,
+    slidesToShow = 1,
+    children = [],
+    swipe = true,
+    swipeDuration = 500,
 }: SliderProps) => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    let slideInterval: number;
+    const [currentSlide, setCurrentSlide] = useState(1);
+    const slideInterval = useRef<number>();
 
     const startSlideTimer = () => {
         if (autoPlay) {
             stopSlideTimer();
-            slideInterval = window.setInterval(() => {
+            slideInterval.current = window.setInterval(() => {
                 setCurrentSlide(currentSlide =>
-                    currentSlide < slides.length - 1 ? currentSlide + 1 : 0
+                    currentSlide < children.length - 1 ? currentSlide + 1 : 0
                 );
             }, interval);
         }
@@ -35,7 +42,7 @@ const Slider = ({
 
     const stopSlideTimer = () => {
         if (autoPlay && slideInterval) {
-            clearInterval(slideInterval);
+            clearInterval(slideInterval.current);
         }
     };
 
@@ -46,38 +53,56 @@ const Slider = ({
 
     const prev = () => {
         startSlideTimer();
-        const index = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
+        const index = currentSlide > 0 ? currentSlide - 1 : children.length - 1;
         setCurrentSlide(index);
     };
 
     const next = () => {
         startSlideTimer();
-        const index = currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
+        const index = currentSlide < children.length - 1 ? currentSlide + 1 : 0;
         setCurrentSlide(index);
     };
+    const handleSwipe = useSwipeable({
+        onSwipedLeft: () => next(),
+        onSwipedRight: () => prev(),
+        preventScrollOnSwipe: true,
+        trackMouse: swipe,
+        swipeDuration: swipeDuration,
+    });
     const switchIndex = (index: number) => {
         startSlideTimer();
         setCurrentSlide(index);
     };
 
     return (
-        <div className="slider" style={{ maxWidth: width }}>
+        <div
+            {...handleSwipe}
+            className="slider cursor-pointer"
+            style={{ maxWidth: width, maxHeight: height }}
+        >
             <div
                 className="slider-inner"
-                style={{ transform: `translateX(${-currentSlide * 100}%)` }}
+                style={{
+                    transform: `translateX(${
+                        (-currentSlide * 100) / slidesToShow
+                    }%)`,
+                }}
             >
-                {slides.map((slide, index) => (
+                {children?.map((child, index) => (
                     <SliderItem
-                        slide={slide}
+                        width={width / slidesToShow}
+                        height={height}
                         key={index}
                         stopSlide={stopSlideTimer}
                         startSlide={startSlideTimer}
-                    />
+                    >
+                        {child}
+                    </SliderItem>
                 ))}
             </div>
             {indicator && (
                 <SliderIndicator
-                    slides={slides}
+                    length={children?.length}
                     currentIndex={currentSlide}
                     switchIndex={switchIndex}
                 />

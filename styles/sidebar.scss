@@ -13,7 +13,7 @@
 .sidebar .main-menu {
   width: 120px;
   height: calc(100% - 100px);
-  background: $background-sidebar-color;
+  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
   z-index: 3;
   position: fixed;
   transition: transform .3s;
@@ -33,7 +33,7 @@
 
 .sidebar .sub-menu {
   width: 230px;
-  background: $background-sidebar-color;
+  @apply bg-white text-black dark:bg-gray-800 dark:text-gray-100;
   z-index: 2;
   position: fixed;
   left: 120px;

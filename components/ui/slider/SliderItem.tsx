@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 interface SliderItemProps {
-    slide: string;
+    children?: ReactElement;
+    width?: number;
+    height?: number;
     stopSlide: () => void;
     startSlide: () => void;
 }
 
-const SliderItem = ({ slide, stopSlide, startSlide }: SliderItemProps) => {
+const SliderItem = ({
+    children,
+    stopSlide,
+    startSlide,
+    width,
+    height,
+}: SliderItemProps) => {
     return (
         <div
             className="slider-item"
             onMouseEnter={stopSlide}
             onMouseOut={startSlide}
+            style={{ width: width, height: height }}
         >
-            <img src={slide} alt="slide" />
+            {children}
         </div>
     );
 };

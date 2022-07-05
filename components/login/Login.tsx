@@ -65,7 +65,7 @@ const Login = () => {
                     Sign in
                 </button>
 
-                <div className="text-center">
+                <div className="text-center link-authenticate">
                     <p>
                         Not a member?{' '}
                         <Link href={'/sign-up'} passHref>

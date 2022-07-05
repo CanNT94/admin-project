@@ -1,37 +1,33 @@
-.item-masonry {
-    break-inside: avoid;
-    border-radius: 16px;
-    overflow: hidden;
-    cursor: zoom-in;
-    img {
-        width: 100%;
-        object-fit: cover;
+.masonry {
+    display: grid;
+    grid-auto-rows: minmax(20vh, 300px);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    > div {
+        height: initial;
+        margin: unset;
+        width: initial;
+        min-width: initial;
+        animation: 1s ease-out 0s 1 slideInBottom;
+        &:nth-of-type(2n + 2) {
+            grid-row: span 2;
+        }
+        .item-masonry {
+            height: 100%;
+            width: 100%;
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+            }
+        }
     }
 }
 
-// .item-masonry:hover .btn-save {
-//     display: block;
-// }
-
-.item-masonry {
-    position: relative;
-    &::after {
-        content: '';
-        position: absolute;
-        background: rgba(0, 0, 0, 0.37);
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        border-radius: 16px;
-        z-index: 1;
-        opacity: 0;
-        visibility: hidden;
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(-100%);
     }
-    &:hover {
-        &::after {
-            visibility: visible;
-            opacity: 1;
-        }
+    100% {
+        transform: translateY(0);
     }
 }
