@@ -161,6 +161,6 @@ main {
     text-decoration: none !important;
 }
 
-.dropdown-popup {
+.dropdown-popup, .item-notification {
     @apply bg-white dark:bg-background-color-dark border dark:border-border-color-dark;
 }

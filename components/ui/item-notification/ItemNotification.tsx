@@ -17,7 +17,7 @@ const ItemNotification = ({ notifications = [] }: ItemNotificationProps) => {
                 onClick={() => setVisible(!visible)}
             >
                 {visible && (
-                    <div className="border bg-white  rounded-md mt-2 overflow-y-auto w-64 h-72 absolute right-0 left-auto">
+                    <div className="item-notification rounded-md mt-2 overflow-y-auto w-64 h-72 absolute right-0 left-auto">
                         {notifications?.length > 0 &&
                             notifications.map(notification => (
                                 <div
