@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { Masonry } from '../../components/ui/masonry';
@@ -11,18 +11,18 @@ const Images = dynamic(() => import('../../components/ui/masonry/Images'), {
 
 const GridImagesPage = () => {
     const [dataImages, setDataImages] = useState<IImage[]>([]);
-    const [limit, setLimit] = useState<number>(20);
+    const [pg, setPg] = useState<number>(1);
     const [isFetching, setIsFetching] = useState(false);
-    useEffect(() => {
-        fetch(`http://localhost:8888/masonry?_limit=${limit}`, {
+    useLayoutEffect(() => {
+        fetch(`http://localhost:8888/masonry?_page=${pg}`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' },
         })
             .then(res => res.json())
             .then(data => {
-                setDataImages(data);
+                setDataImages([...dataImages, ...data]);
             });
-    }, [limit]);
+    }, [pg]);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -45,13 +45,10 @@ const GridImagesPage = () => {
 
     const fetchMoreListItems = () => {
         setTimeout(() => {
-            setLimit(limit => (limit = limit + 10));
+            setPg(pg => (pg = pg + 1));
             setIsFetching(false);
-        }, 4000);
+        }, 1000);
     };
-
-    console.log(isFetching);
-    
 
     return (
         <>
@@ -62,14 +59,10 @@ const GridImagesPage = () => {
                 <meta property="og:description" content="Grid Images" />
                 <meta property="og:type" content="website" />
             </Head>
-            <Masonry columns={7} gap={10}>
+            <Masonry gap={15}>
                 {dataImages.map(data => {
-                    const hg = 200 + Math.ceil(Math.random() * 300);                   
-                    return (
-                        <Images key={data?.id} data={data} height={hg} />
-                    )
+                    return <Images key={data?.id} data={data} />;
                 })}
-                
             </Masonry>
             {isFetching === true && <Loading />}
         </>
