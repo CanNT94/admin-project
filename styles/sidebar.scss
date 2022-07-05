@@ -13,7 +13,7 @@
 .sidebar .main-menu {
   width: 120px;
   height: calc(100% - 100px);
-  @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+  @apply bg-white text-gray-900 dark:bg-background-color-dark dark:text-gray-100;
   z-index: 3;
   position: fixed;
   transition: transform .3s;
@@ -33,11 +33,12 @@
 
 .sidebar .sub-menu {
   width: 230px;
-  @apply bg-white text-black dark:bg-gray-800 dark:text-gray-100;
+  @apply bg-white text-black dark:bg-background-color-dark dark:text-gray-100;
   z-index: 2;
   position: fixed;
   left: 120px;
-  border-left: 1px solid $border-color;
+  border-left: 1px solid;
+  @apply border-border-color dark:border-border-color-dark;
   box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
   transition: transform .3s;
   height: calc(100% - 100px);
@@ -81,7 +82,8 @@
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
-  border-bottom: 1px solid #f3f3f3;
+  border-bottom: 1px solid;
+  @apply border-border-color dark:border-border-color-dark;
   color: #3a3a3a;
 }
 

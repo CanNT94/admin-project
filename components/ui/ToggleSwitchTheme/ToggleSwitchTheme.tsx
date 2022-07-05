@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 const ToggleSwitchTheme = () => {
     const { theme, setTheme } = useTheme();
+
+    useEffect(() => {
+        setTheme('light');
+    }, []);
 
     return (
         <div className="btn-switch-theme mx-2">

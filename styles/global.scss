@@ -22,7 +22,7 @@ body {
 
 @layer base {
     body {
-        @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+        @apply bg-white text-gray-900 dark:bg-background-color-dark dark:text-gray-100;
         @apply min-h-screen;
     }
 
@@ -65,7 +65,8 @@ main {
     }
     &:last-child {
         margin-top: 0.9375rem;
-        border-top: 1px solid #dee2e6;
+        border-top: 1px solid;
+        @apply border-[#dee2e6] dark:border-border-color-dark
     }
 }
 // End
@@ -115,7 +116,7 @@ main {
 }
 
 .switcher-language .language-button {
-    background: #f8f8f8;
+    @apply bg-[#f8f8f8] dark:bg-[#1D1A1D];
     border: initial;
     font-size: 0.8rem;
     color: #8f8f8f;
@@ -158,4 +159,8 @@ main {
 .link-authenticate a {
     color: $primary-color !important;
     text-decoration: none !important;
+}
+
+.dropdown-popup {
+    @apply bg-white dark:bg-background-color-dark border dark:border-border-color-dark;
 }

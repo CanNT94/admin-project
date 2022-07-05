@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import useClickOutside from '../../../hooks/useOutside';
 import { useTranslation } from 'react-i18next';
 
@@ -33,11 +33,11 @@ const SwitcherLanguage = ({ dataLanguage, languageActive }: DropDownProps) => {
             >
                 <span className="label">{title}</span>
             </button>
-            {visible === true && (
-                <div className="px-0 py-2 w-40 z-50 bg-white border border-slate-400 rounded-xl absolute top-14 right-0 switcher-options cursor-pointer">
+            {visible && (
+                <div className="px-0 py-2 w-40 z-50 dropdown-popup rounded-xl absolute top-14 right-0 switcher-options cursor-pointer">
                     {dataLanguage.map(item => (
                         <div
-                            className="px-4 py-2 text-left text-sm hover:bg-gray-200"
+                            className="px-4 py-2 text-left text-sm hover:bg-gray-200 hover:text-gray-900"
                             key={item.id}
                             onClick={() => handleClickSwitcherLanguage(item.id)}
                         >

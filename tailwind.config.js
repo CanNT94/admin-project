@@ -11,15 +11,14 @@ module.exports = {
                 dark: {
                     css: {
                         color: theme('colors.gray.300'),
-                        h1: {
-                            color: theme('colors.gray.100'),
-                        },
-                        h2: {
-                            color: theme('colors.gray.100'),
-                        },
                     },
                 },
             }),
+            colors: {
+                'border-color': '#f3f3f3',
+                'border-color-dark': '#424242',
+                'background-color-dark': '#242224',
+            },
         },
     },
     variants: {

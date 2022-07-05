@@ -33,7 +33,7 @@ const Login = () => {
     return (
         <div className="w-50 start-50 position-relavtive bg-danger">
             <form
-                className="w-25 start-50 position-absolute translate-middle-x mt-3 p-5 bg-light"
+                className="w-25 start-50 position-absolute translate-middle-x mt-3 p-5 bg-light dark:bg-[#1D1A1D]"
                 onSubmit={e => handleSubmit(e)}
             >
                 <div className="form-outline mb-4">

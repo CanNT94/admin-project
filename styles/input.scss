@@ -1,7 +1,7 @@
 .input {
   position: relative;
   border-radius: 1.5rem;
-  background: #f8f8f8;
+  @apply bg-[#f8f8f8] dark:bg-[#1D1A1D];
 }
 
 .input input {
@@ -12,7 +12,6 @@
   line-height: 1.75;
   font-size: .8rem;
   width: 90%;
-  color: #3a3a3a;
 }
 
 .input .icon-hover {

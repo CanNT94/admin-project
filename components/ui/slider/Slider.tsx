@@ -19,14 +19,14 @@ const Slider = ({
     button = false,
     indicator = false,
     autoPlay = true,
-    width = 1000,
-    height = 400,
+    width = 900,
+    height = 300,
     slidesToShow = 1,
     children = [],
     swipe = true,
     swipeDuration = 500,
 }: SliderProps) => {
-    const [currentSlide, setCurrentSlide] = useState(1);
+    const [currentSlide, setCurrentSlide] = useState(0);
     const slideInterval = useRef<number>();
 
     const startSlideTimer = () => {
@@ -78,7 +78,7 @@ const Slider = ({
         <div
             {...handleSwipe}
             className="slider cursor-pointer"
-            style={{ maxWidth: width, maxHeight: height }}
+            style={{ width: width, height: height }}
         >
             <div
                 className="slider-inner"

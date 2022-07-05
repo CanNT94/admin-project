@@ -55,7 +55,7 @@ const SliderPage = () => {
                             src={slide}
                             alt={slide}
                             key={index}
-                            style={{ height: '100%' }}
+                            style={{ height: '100%', width: '100%' }}
                             draggable="false"
                         />
                     ))}
