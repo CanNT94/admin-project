@@ -44,9 +44,14 @@ const GridImagesPage = () => {
     };
 
     const fetchMoreListItems = () => {
-        setPg(pg => (pg = pg + 1));
-        setIsFetching(false);
+        setTimeout(() => {
+            setPg(pg => (pg = pg + 1));
+            setIsFetching(false);
+        }, 1000);
     };
+
+    console.log(isFetching);
+    
 
     return (
         <>

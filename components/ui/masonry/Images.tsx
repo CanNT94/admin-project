@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import { IImage } from '../../../model/image';
 import Action from './Action';
 
