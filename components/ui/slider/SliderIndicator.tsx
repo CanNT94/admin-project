@@ -1,19 +1,19 @@
 import React from 'react';
 
 interface SliderIndicatorProps {
-    slides: string[];
+    length: number;
     currentIndex: number;
     switchIndex: (index: number) => void;
 }
 
 const SliderIndicator = ({
-    slides,
+    length = 0,
     currentIndex,
     switchIndex,
 }: SliderIndicatorProps) => {
     return (
         <div className="slider-indicators">
-            {slides.map((_, index) => (
+            {Array.from(Array(length).keys()).map((_, index) => (
                 <button
                     className={`slider-indicator-item${
                         currentIndex === index ? ' active' : ''
