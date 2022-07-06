@@ -2,7 +2,7 @@ import React from 'react';
 
 const ShadowBox = () => {
     return (
-        <div className="w-80 bg-slate-100 absolute -top-2 mt-12 rounded-xl px-2 ">
+        <div className="w-80 bg-slate-100 absolute bottom-full mb-2 right-2 left-auto rounded-xl px-2 ">
             <div className="text-sm mt-2 text-center">
                 This Pin was inspired by your recent activity
             </div>
