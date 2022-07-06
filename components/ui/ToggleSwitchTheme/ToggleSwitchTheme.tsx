@@ -7,7 +7,7 @@ const ToggleSwitchTheme = () => {
         if (!systemTheme) {
             setTheme('light');
         }
-    });
+    }, []);
     return (
         <div className="btn-switch-theme mx-2">
             <button
