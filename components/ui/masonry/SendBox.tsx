@@ -4,7 +4,7 @@ import UserTest from './UserTest';
 const SendBox = () => {
     return (
         <div>
-            <div className="w-80 bg-slate-100 absolute -top-2 mt-12 rounded-xl px-3">
+            <div className="w-80 bg-slate-100 absolute top-auto mb-2 right-10 left-auto rounded-xl px-3">
                 <div className="text-center font-bold text-lg mt-2 ">
                     Send this Pin
                 </div>
