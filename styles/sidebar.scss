@@ -122,7 +122,8 @@
 }
 .sidebar .sub-menu ul li a {
   font-size: 13px;
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 8px 0;
   margin-bottom: 10px;
 }

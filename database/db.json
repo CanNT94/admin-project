@@ -62,6 +62,12 @@
                     "iconClassName": "bi bi-sliders",
                     "label": "menu.slider",
                     "url": "/slider"
+                },
+                {
+                    "id": 3,
+                    "iconClassName": "bi bi-pencil-square",
+                    "label": "menu.editor",
+                    "url": "/editor"
                 }
             ]
         },
